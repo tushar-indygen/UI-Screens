@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPARC - Incidents List</title>
+    <link rel="stylesheet" href="globals.css" />
+  </head>
+  <body class="light">
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <div class="sidebar-logo-icon">
+            <img src="../assets/logo.png" alt="Logo" class="logo-img" />
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="Dashboard.html" class="nav-item">
+              <img
+                src="../assets/icons/dashboard_icon.svg"
+                alt="Analytics"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Investigation.html" class="nav-item">
+              <img
+                src="../assets/icons/investigate_page.svg"
+                alt="Investigate"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Incidents List.html" class="nav-item">
+              <img
+                src="../assets/icons/incident_page.svg"
+                alt="Incidents"
+                class="nav-icon"
+              />
+            </a>
+          </div>
+          <div class="nav-spacer"></div>
+          <a href="Settings (Integrations).html" class="nav-item">
+            <img
+              src="../assets/icons/settings.svg"
+              alt="Settings"
+              class="nav-icon"
+            />
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content-wrapper">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="topbar-title">
+            <span class="active-path">Incident</span>
+          </div>
+
+          <div class="topbar-actions">
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/light_mode.svg"
+                alt="Light Mode"
+                class="nav-icon"
+              />
+            </button>
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/account.svg"
+                alt="Account"
+                class="nav-icon"
+              />
+            </button>
+          </div>
+        </header>
+
+        <!-- Canvas -->
+        <main class="main-canvas">
+          <!-- Search and Filter Bar -->
+          <div class="search-filter-bar">
+            <div class="search-input-group">
+              <div class="filter-select custom-dropdown" tabindex="0">
+                <span class="dropdown-selected">Select Filter</span>
+                <img
+                  src="../assets/icons/expand_more.svg"
+                  alt="expand_more"
+                  class="icon-md"
+                />
+                <div class="dropdown-options">
+                  <div class="dropdown-group-title">Pre saved</div>
+                  <div class="dropdown-option">Demo 1</div>
+                  <div class="dropdown-option">Demo 2</div>
+                  <div class="dropdown-group-title">Filters</div>
+                  <div class="dropdown-option">CREATED AT</div>
+                  <div class="dropdown-option">RULE</div>
+                  <div class="dropdown-option">TITLE</div>
+                  <div class="dropdown-option">OFFENSE IDS</div>
+                  <div class="dropdown-option">EVENT END</div>
+                  <div class="dropdown-option">MITRE CATEGORY</div>
+                  <div class="dropdown-option">NUM OFFENSES</div>
+                  <div class="dropdown-option">ID</div>
+                  <div class="dropdown-option">ASSIGNED TO</div>
+                  <div class="dropdown-option">SEVERITY</div>
+                  <div class="dropdown-option">PRIORITY</div>
+                  <div class="dropdown-option">START TIME</div>
+                  <div class="dropdown-option">EVENT START</div>
+                </div>
+              </div>
+              <div class="search-input-wrapper">
+                <input
+                  type="text"
+                  placeholder="Type field name or field value"
+                />
+              </div>
+            </div>
+
+            <button class="action-icon-btn">
+              <img
+                src="../assets/icons/calender_new.svg"
+                alt="Calendar"
+                class="nav-icon"
+              />
+            </button>
+            <button class="action-icon-btn">
+              <img
+                src="../assets/icons/share.svg"
+                alt="share"
+                class="nav-icon"
+              />
+            </button>
+          </div>
+
+          <!-- Table Actions -->
+          <div class="table-actions-row">
+            <button
+              class="pill-btn"
+              onclick="
+                document
+                  .getElementById('select-columns-modal')
+                  .classList.add('active')
+              "
+            >
+              <span>Select Columns</span>
+              <img
+                src="../assets/icons/filter_alt.svg"
+                alt="filter_alt"
+                class="icon-md"
+              />
+            </button>
+            <button class="pill-btn">
+              <span>Download</span>
+              <img
+                src="../assets/icons/download.svg"
+                alt="download"
+                class="icon-md"
+              />
+            </button>
+            <button class="pill-btn custom-dropdown" tabindex="0">
+              <span class="dropdown-selected">Edit Layout</span>
+              <img src="../assets/icons/edit.svg" alt="edit" class="icon-md" />
+              <div class="dropdown-options">
+                <div class="dropdown-option">Compact View</div>
+                <div class="dropdown-option">Comfortable View</div>
+              </div>
+            </button>
+          </div>
+
+          <!-- Data Table Container -->
+          <div class="card-main">
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th><div class="th-content">TITLE</div></th>
+                    <th>
+                      <div class="th-content">
+                        DESCRIPTION
+                        <img
+                          src="../assets/icons/sort.svg"
+                          alt="Sort"
+                          class="icon-sm"
+                        />
+                      </div>
+                    </th>
+                    <th>
+                      <div class="th-content">
+                        SEVERITY
+                        <img
+                          src="../assets/icons/sort.svg"
+                          alt="Sort"
+                          class="icon-sm"
+                        />
+                      </div>
+                    </th>
+                    <th><div class="th-content">MITRE CATEGORY</div></th>
+                    <th><div class="th-content">CATEGORY</div></th>
+                    <th>
+                      <div class="th-content">
+                        CREATED AT
+                        <img
+                          src="../assets/icons/sort.svg"
+                          alt="Sort"
+                          class="icon-sm"
+                        />
+                      </div>
+                    </th>
+                    <th><div class="th-content">EVENT START</div></th>
+                    <th><div class="th-content">EVENT END</div></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr onclick="window.location.href = 'Incidents.html'">
+                    <td>Sensiti...</td>
+                    <td>A low - Severity Inciden...</td>
+                    <td class="status-severity low">Low</td>
+                    <td>Credential Access</td>
+                    <td>Security E...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                  </tr>
+                  <tr onclick="window.location.href = 'Incidents.html'">
+                    <td>Sensiti...</td>
+                    <td>A low - Severity Inciden...</td>
+                    <td class="status-severity medium">Medium</td>
+                    <td>Credential Access</td>
+                    <td>Security E...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                  </tr>
+                  <tr onclick="window.location.href = 'Incidents.html'">
+                    <td>Sensiti...</td>
+                    <td>A low - Severity Inciden...</td>
+                    <td class="status-severity high">High</td>
+                    <td>Credential Access</td>
+                    <td>Security E...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                  </tr>
+                  <tr onclick="window.location.href = 'Incidents.html'">
+                    <td>Sensiti...</td>
+                    <td>A low - Severity Inciden...</td>
+                    <td class="status-severity high">High</td>
+                    <td>Credential Access</td>
+                    <td>Security E...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                  </tr>
+                  <tr onclick="window.location.href = 'Incidents.html'">
+                    <td>Sensiti...</td>
+                    <td>A low - Severity Inciden...</td>
+                    <td class="status-severity medium">Medium</td>
+                    <td>Credential Access</td>
+                    <td>Security E...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                  </tr>
+                  <tr onclick="window.location.href = 'Incidents.html'">
+                    <td>Sensiti...</td>
+                    <td>A low - Severity Inciden...</td>
+                    <td class="status-severity low">Low</td>
+                    <td>Credential Access</td>
+                    <td>Security E...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                  </tr>
+                  <tr onclick="window.location.href = 'Incidents.html'">
+                    <td>Sensiti...</td>
+                    <td>A low - Severity Inciden...</td>
+                    <td class="status-severity low">Low</td>
+                    <td>Credential Access</td>
+                    <td>Security E...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                  </tr>
+                  <tr onclick="window.location.href = 'Incidents.html'">
+                    <td>Sensiti...</td>
+                    <td>A low - Severity Inciden...</td>
+                    <td class="status-severity low">Low</td>
+                    <td>Credential Access</td>
+                    <td>Security E...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                  </tr>
+                  <tr onclick="window.location.href = 'Incidents.html'">
+                    <td>Sensiti...</td>
+                    <td>A low - Severity Inciden...</td>
+                    <td class="status-severity high">High</td>
+                    <td>Credential Access</td>
+                    <td>Security E...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                  </tr>
+                  <tr onclick="window.location.href = 'Incidents.html'">
+                    <td>Sensiti...</td>
+                    <td>A low - Severity Inciden...</td>
+                    <td class="status-severity medium">Medium</td>
+                    <td>Credential Access</td>
+                    <td>Security E...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                    <td>22 Februar...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="pagination">
+            <img
+              src="../assets/icons/previous_page.svg"
+              alt="Next"
+              class="page-item icon-img-sm"
+            />
+            <span class="page-item active">1</span>
+            <span class="page-item">2</span>
+            <span class="page-item">3</span>
+            <span class="page-item">4</span>
+            <span class="page-item">5</span>
+            <img
+              src="../assets/icons/next_page.svg"
+              alt="Next"
+              class="page-item icon-img-sm"
+            />
+            <div class="page-info page-info--offset">10 / page</div>
+          </div>
+        </main>
+      </div>
+
+      <button class="fab">
+        <img src="../assets/chatbot.svg" alt="Chatbot" class="fab-img" />
+      </button>
+    </div>
+    <div class="modal-overlay" id="select-columns-modal">
+      <div class="modal-container columns-modal">
+        <div class="modal-header columns-modal-header">
+          <div class="columns-modal-header-left">
+            <h2 class="modal-title">Select & Reorder Columns</h2>
+            <p class="modal-subtext">
+              Select and reorder the columns you want to display
+            </p>
+          </div>
+          <div class="modal-header-actions">
+            <img
+              src="../assets/icons/expand.svg"
+              class="icon-md"
+              style="cursor: pointer"
+            />
+            <img
+              src="../assets/icons/close.svg"
+              class="icon-md"
+              onclick="
+                document
+                  .getElementById('select-columns-modal')
+                  .classList.remove('active')
+              "
+              style="cursor: pointer"
+            />
+          </div>
+        </div>
+        <div class="columns-modal-body">
+          <div class="modal-search">
+            <img src="../assets/icons/search.svg" alt="Search Icon" />
+            <input type="text" placeholder="Search Columns" />
+          </div>
+
+          <div class="columns-controls-row">
+            <label class="checkbox-label">
+              <input type="checkbox" />
+              <span class="checkbox-text">Select all visible columns</span>
+            </label>
+            <button class="text-btn-clear">Clear all</button>
+            <div class="flex-spacer"></div>
+            <div class="columns-pill">19 VISIBLE</div>
+            <div class="columns-pill">5 SELECTED</div>
+          </div>
+
+          <div class="columns-reorder-container">
+            <div class="columns-reorder-header">All Columns</div>
+            <div class="columns-list">
+              <div class="column-drag-item selected">
+                <img
+                  src="../assets/icons/drag_and_rearrange.svg"
+                  class="icon-md"
+                />
+                <input type="checkbox" checked />
+                <span>Title</span>
+              </div>
+              <div class="column-drag-item selected">
+                <img
+                  src="../assets/icons/drag_and_rearrange.svg"
+                  class="icon-md"
+                />
+                <input type="checkbox" checked />
+                <span>Description</span>
+              </div>
+              <div class="column-drag-item selected">
+                <img
+                  src="../assets/icons/drag_and_rearrange.svg"
+                  class="icon-md"
+                />
+                <input type="checkbox" checked />
+                <span>Severity</span>
+              </div>
+              <div class="column-drag-item selected">
+                <img
+                  src="../assets/icons/drag_and_rearrange.svg"
+                  class="icon-md"
+                />
+                <input type="checkbox" checked />
+                <span>Mitre Category</span>
+              </div>
+              <div class="column-drag-item">
+                <img
+                  src="../assets/icons/drag_and_rearrange.svg"
+                  class="icon-md"
+                />
+                <input type="checkbox" />
+                <span>Created At</span>
+              </div>
+              <div class="column-drag-item selected">
+                <img
+                  src="../assets/icons/drag_and_rearrange.svg"
+                  class="icon-md"
+                />
+                <input type="checkbox" checked />
+                <span>Event End</span>
+              </div>
+              <div class="column-drag-item">
+                <img
+                  src="../assets/icons/drag_and_rearrange.svg"
+                  class="icon-md"
+                />
+                <input type="checkbox" />
+                <span>Priority</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer columns-modal-footer">
+          <button
+            class="action-btn-outline"
+            style="color: var(--color-on-surface-variant)"
+            onclick="
+              document
+                .getElementById('select-columns-modal')
+                .classList.remove('active')
+            "
+          >
+            Clear All
+          </button>
+          <button
+            class="btn-primary"
+            onclick="
+              document
+                .getElementById('select-columns-modal')
+                .classList.remove('active')
+            "
+          >
+            Apply Changes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

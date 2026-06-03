@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SPARC - Correlation Rules</title>
+    <link href="globals.css" rel="stylesheet" />
+  </head>
+  <body class="light settings-correlation-page">
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <div class="sidebar-logo-icon">
+            <img alt="Logo" class="logo-img" src="../assets/logo.png" />
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a class="nav-item" href="Dashboard.html">
+              <img
+                alt="Analytics"
+                class="nav-icon"
+                src="../assets/icons/dashboard_icon.svg"
+              />
+            </a>
+            <a class="nav-item" href="Investigation.html">
+              <img
+                alt="Investigate"
+                class="nav-icon"
+                src="../assets/icons/investigate_page.svg"
+              />
+            </a>
+            <a class="nav-item" href="Incidents List.html">
+              <img
+                alt="Incidents"
+                class="nav-icon"
+                src="../assets/icons/incident_page.svg"
+              />
+            </a>
+          </div>
+          <div class="nav-group">
+            <a class="nav-item active" href="Settings (Integrations).html">
+              <img
+                alt="Settings"
+                class="nav-icon"
+                src="../assets/icons/settings_integration.svg"
+              />
+            </a>
+            <a class="nav-item" href="Settings (Data Sources).html">
+              <img
+                alt="Option 2"
+                class="nav-icon"
+                src="../assets/icons/settings_data_sources.svg"
+              />
+            </a>
+            <a class="nav-item" href="Settings (Sigma Rules).html">
+              <img
+                alt="Option 3"
+                class="nav-icon"
+                src="../assets/icons/settings_sigma.svg"
+              />
+            </a>
+            <a class="nav-item" href="#">
+              <img
+                alt="Option 4"
+                class="nav-icon"
+                src="../assets/icons/settings.svg"
+              />
+            </a>
+          </div>
+        </nav>
+      </aside>
+      <!-- Main Content -->
+      <div class="main-content-wrapper">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="topbar-title">
+            <span> Settings </span>
+            <img
+              alt="Next"
+              class="icon-img-sm"
+              src="../assets/icons/next_page.svg"
+            />
+            <span class="active-path"> Rules </span>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-btn-dark">
+              <img
+                alt="Light Mode"
+                class="nav-icon"
+                src="../assets/icons/light_mode.svg"
+              />
+            </button>
+            <button class="icon-btn-dark">
+              <img
+                alt="Account"
+                class="nav-icon"
+                src="../assets/icons/account.svg"
+              />
+            </button>
+          </div>
+        </header>
+        <!-- Canvas -->
+        <main class="main-canvas">
+          <div class="settings-row">
+            <div class="segmented-control-large flex-1">
+              <div class="segment-btn active">Correlation Rules</div>
+              <div
+                class="segment-btn"
+                onclick="window.location.href = 'Settings (Sigma Rules).html'"
+              >
+                Sigma Rules
+              </div>
+            </div>
+            <div class="search-pill-container">
+              <img alt="Search Icon" src="../assets/icons/search.svg" />
+              <input placeholder="Search" type="text" />
+            </div>
+          </div>
+          <div class="card-main card-main--flush-x">
+            <div class="card-section-header">
+              <div class="segmented-control-small">
+                <div class="segment-sm">Default</div>
+                <div class="segment-sm active">Custom</div>
+              </div>
+              <div class="status-pill-info">total Rules : 40</div>
+              <div class="card-actions">
+                <button class="action-btn-outline">Upload yaml</button>
+                <button class="action-btn-outline">Upload JSON</button>
+                <button class="action-btn-outline">Create Rule</button>
+              </div>
+            </div>
+            <!-- Table -->
+            <div class="card-main">
+              <table class="data-table data-table--flush">
+                <thead>
+                  <tr>
+                    <th>RULES</th>
+                    <th>LOG SOURCES</th>
+                    <th>SEVERITY</th>
+                    <th class="col-right">ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="height: 400px; pointer-events: none">
+                    <td colspan="8" style="border-bottom: none"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="pagination pagination--padded">
+            <img
+              alt="Next"
+              class="page-item icon-img-sm"
+              src="../assets/icons/previous_page.svg"
+            />
+            <span class="page-item active"> 1 </span>
+            <span class="page-item"> 2 </span>
+            <span class="page-item"> 3 </span>
+            <span class="page-item"> 4 </span>
+            <span class="page-item"> 5 </span>
+            <img
+              alt="Next"
+              class="page-item icon-img-sm"
+              src="../assets/icons/next_page.svg"
+            />
+            <div class="page-info page-info--padded">10 / page</div>
+          </div>
+        </main>
+      </div>
+      <button class="fab">
+        <img alt="Chatbot" class="fab-img" src="../assets/chatbot.svg" />
+      </button>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

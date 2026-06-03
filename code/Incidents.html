@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPARC - Incident Details</title>
+    <link rel="stylesheet" href="globals.css" />
+  </head>
+  <body class="light">
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <div class="sidebar-logo-icon">
+            <img src="../assets/logo.png" alt="Logo" class="logo-img" />
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="Dashboard.html" class="nav-item">
+              <img
+                src="../assets/icons/dashboard_icon.svg"
+                alt="Analytics"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Investigation.html" class="nav-item">
+              <img
+                src="../assets/icons/investigate_page.svg"
+                alt="Investigate"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Incidents List.html" class="nav-item">
+              <img
+                src="../assets/icons/incident_page.svg"
+                alt="Incidents"
+                class="nav-icon"
+              />
+            </a>
+          </div>
+          <div class="nav-spacer"></div>
+          <a href="Settings (Integrations).html" class="nav-item">
+            <img
+              src="../assets/icons/settings.svg"
+              alt="Settings"
+              class="nav-icon"
+            />
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content-wrapper">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="topbar-title">
+            <span>Incidents &rsaquo;</span>
+            <span class="active-path"
+              >A026e44f-1222-41b1-be35-44274ac12acb</span
+            >
+          </div>
+
+          <div class="topbar-actions">
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/light_mode.svg"
+                alt="Light Mode"
+                class="nav-icon"
+              />
+            </button>
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/account.svg"
+                alt="Account"
+                class="nav-icon"
+              />
+            </button>
+          </div>
+        </header>
+
+        <!-- Canvas -->
+        <main class="main-canvas">
+          <!-- Info Panels Row -->
+          <div class="info-panels-row">
+            <div class="info-panel info-panel--wide">
+              <div class="info-panel-title">
+                Failed Login to Disabled Account
+                <img
+                  src="../assets/icons/north_east.svg"
+                  alt="north_east"
+                  class="icon-md icon-muted"
+                />
+                <span class="badge-apt">APT C -30</span>
+                <div class="severity-indicator">
+                  <div class="severity-dot"></div>
+                  HIGH
+                </div>
+              </div>
+            </div>
+
+            <div class="info-panel info-panel--narrow">
+              <div class="info-panel-meta">
+                <img
+                  src="../assets/icons/created_at.svg"
+                  alt="schedule"
+                  class="icon-img-sm"
+                />
+                Created At:
+              </div>
+              <div class="info-panel-value">10 February 2026 at 19:34:41</div>
+            </div>
+
+            <div class="info-panel info-panel--narrow">
+              <div class="info-panel-meta">
+                <img
+                  src="../assets/icons/total_events.svg"
+                  alt="receipt_long"
+                  class="icon-img-sm"
+                />
+                Total Events:
+              </div>
+              <div class="info-panel-value">19</div>
+            </div>
+          </div>
+
+          <!-- Metadata Row -->
+          <div class="metadata-row">
+            <div class="metadata-card metadata-card--flex">
+              <img
+                src="../assets/icons/high_severity.svg"
+                alt="warning"
+                class="icon-md icon-muted"
+              />
+              <span class="icon-muted">Category:</span>
+              <span class="metadata-tag">ACCESS DENIED</span>
+              <span class="metadata-tag">USER LOGIN FAILURE</span>
+              <img
+                src="../assets/icons/expand.svg"
+                alt="expand"
+                class="icon-md icon-muted ml-auto"
+              />
+            </div>
+
+            <div class="metadata-card metadata-card--flex">
+              <img
+                src="../assets/icons/mitre_category.svg"
+                alt="security"
+                class="icon-md icon-muted"
+              />
+              <span class="icon-muted">Mitre Category:</span>
+              <span class="metadata-tag">EXFILTRATION</span>
+              <img
+                src="../assets/icons/expand.svg"
+                alt="expand"
+                class="icon-md icon-muted ml-auto"
+              />
+            </div>
+
+            <div class="segmented-control-large flex-1">
+              <div class="segment-btn">Suggestion</div>
+              <div class="segment-btn active">Prediction</div>
+            </div>
+          </div>
+
+          <!-- Retrospection Layout -->
+          <div class="retrospection-layout">
+            <div class="card-main retrospection-main">
+              <div class="retrospection-header">
+                <h2 class="section-title">Retrospection</h2>
+
+                <div class="segmented-control">
+                  <div class="segment active">MITRE Tactics: 4/14</div>
+                  <div class="segment">Miscellaneous: 0</div>
+                </div>
+
+                <div class="view-toggles">
+                  <button class="view-toggle-btn active">
+                    <img
+                      src="../assets/icons/grid_layout.svg"
+                      alt="grid_view"
+                      class="icon-img-sm"
+                    />
+                  </button>
+                  <button class="view-toggle-btn">
+                    <img
+                      src="../assets/icons/timeline_layout.svg"
+                      alt="show_chart"
+                      class="icon-img-sm"
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <div class="stages-grid">
+                <!-- Row 1 -->
+                <div class="stage-card detected">
+                  <div class="stage-number">STAGE 1</div>
+                  <div class="stage-name">Reconnaissance</div>
+                  <div class="stage-status detected">Detected</div>
+                </div>
+                <div class="stage-card">
+                  <div class="stage-number">STAGE 2</div>
+                  <div class="stage-name">Resource<br />Develpoment</div>
+                  <div class="stage-status not-detected">Not Detected</div>
+                </div>
+                <div class="stage-card detected">
+                  <div class="stage-number">STAGE 3</div>
+                  <div class="stage-name">Initial Access</div>
+                  <div class="stage-status detected">Detected</div>
+                </div>
+                <div class="stage-card detected">
+                  <div class="stage-number">STAGE 4</div>
+                  <div class="stage-name">Execution</div>
+                  <div class="stage-status detected">Detected</div>
+                </div>
+                <div class="stage-card">
+                  <div class="stage-number">STAGE 5</div>
+                  <div class="stage-name">Persistence</div>
+                  <div class="stage-status not-detected">Not Detected</div>
+                </div>
+                <div class="stage-card">
+                  <div class="stage-number">STAGE 6</div>
+                  <div class="stage-name">Privilege<br />Escalation</div>
+                  <div class="stage-status not-detected">Not Detected</div>
+                </div>
+                <div class="stage-card">
+                  <div class="stage-number">STAGE 7</div>
+                  <div class="stage-name">Defense Evasion</div>
+                  <div class="stage-status not-detected">Not Detected</div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="stage-card">
+                  <div class="stage-number">STAGE 8</div>
+                  <div class="stage-name">Credential Access</div>
+                  <div class="stage-status not-detected">Not Detected</div>
+                </div>
+                <div class="stage-card detected">
+                  <div class="stage-number">STAGE 9</div>
+                  <div class="stage-name">Discovery</div>
+                  <div class="stage-status detected">Detected</div>
+                </div>
+                <div class="stage-card">
+                  <div class="stage-number">STAGE 10</div>
+                  <div class="stage-name">Lateral Movement</div>
+                  <div class="stage-status not-detected">Not Detected</div>
+                </div>
+                <div class="stage-card">
+                  <div class="stage-number">STAGE 11</div>
+                  <div class="stage-name">Collection</div>
+                  <div class="stage-status not-detected">Not Detected</div>
+                </div>
+                <div class="stage-card detected">
+                  <div class="stage-number">STAGE 12</div>
+                  <div class="stage-name">Command and<br />Control</div>
+                  <div class="stage-status detected">Detected</div>
+                </div>
+                <div class="stage-card detected">
+                  <div class="stage-indicator"></div>
+                  <div class="stage-number text-primary">STAGE 13</div>
+                  <div class="stage-name text-primary">Exfiltration</div>
+                  <div class="stage-status detected">Detected</div>
+                </div>
+                <div class="stage-card">
+                  <div class="stage-number">STAGE 14</div>
+                  <div class="stage-name">Impact</div>
+                  <div class="stage-status not-detected">Not Detected</div>
+                </div>
+              </div>
+
+              <div class="timeline-view" id="retrospection-timeline">
+                <div class="timeline-svg-container">
+                  <svg
+                    class="timeline-graph-svg"
+                    viewBox="0 0 1000 350"
+                    preserveAspectRatio="none"
+                  >
+                    <!-- Simulated graph curves -->
+                    <path
+                      class="timeline-path"
+                      d="M 50,300 C 100,300 120,50 150,50 C 180,50 200,100 230,100 C 260,100 280,250 310,250 C 340,250 360,150 390,150 C 420,150 440,280 470,280 C 500,280 520,320 550,320 C 580,320 600,120 630,120 C 660,120 680,200 710,200 C 740,200 760,280 790,280 C 820,280 840,50 870,50 C 900,50 920,300 950,300"
+                    />
+
+                    <circle class="timeline-node" cx="50" cy="300" r="4" />
+                    <circle class="timeline-node" cx="150" cy="50" r="4" />
+                    <circle class="timeline-node" cx="230" cy="100" r="4" />
+                    <circle class="timeline-node" cx="310" cy="250" r="4" />
+                    <circle class="timeline-node" cx="390" cy="150" r="4" />
+                    <circle class="timeline-node" cx="470" cy="280" r="4" />
+                    <circle class="timeline-node" cx="550" cy="320" r="4" />
+                    <circle class="timeline-node" cx="630" cy="120" r="4" />
+                    <circle class="timeline-node" cx="710" cy="200" r="4" />
+                    <circle class="timeline-node" cx="790" cy="280" r="4" />
+                    <circle class="timeline-node" cx="870" cy="50" r="4" />
+                    <circle class="timeline-node" cx="950" cy="300" r="4" />
+                  </svg>
+                </div>
+                <div class="timeline-y-axis">
+                  <span>Stage 1</span>
+                  <span>Stage 2</span>
+                  <span>Stage 3</span>
+                  <span>Stage 4</span>
+                  <span>Stage 5</span>
+                  <span>Stage 6</span>
+                  <span>Stage 7</span>
+                  <span>Stage 8</span>
+                  <span>Stage 9</span>
+                  <span>Stage 10</span>
+                  <span>Stage 11</span>
+                  <span>Stage 12</span>
+                  <span>Stage 13</span>
+                  <span>Stage 14</span>
+                </div>
+                <div class="timeline-x-axis">
+                  <div class="timeline-x-label">12 March<br />2025</div>
+                  <div class="timeline-x-label">14 March<br />2025</div>
+                  <div class="timeline-x-label">17 March<br />2025</div>
+                  <div class="timeline-x-label">20 March<br />2025</div>
+                  <div class="timeline-x-label">22 March<br />2025</div>
+                  <div class="timeline-x-label">29 March<br />2025</div>
+                  <div class="timeline-x-label">30 March<br />2025</div>
+                  <div class="timeline-x-label">1 April<br />2025</div>
+                  <div class="timeline-x-label">4 April<br />2025</div>
+                  <div class="timeline-x-label">7 April<br />2025</div>
+                  <div class="timeline-x-label">9 April<br />2025</div>
+                  <div class="timeline-x-label">10 April<br />2025</div>
+                </div>
+              </div>
+            </div>
+            <!-- end retrospection-main -->
+
+            <!-- Suggestion Side Panel -->
+            <div class="side-panel-card" id="suggestion-panel">
+              <div class="side-panel-header">
+                <h3>Suggestion for this Incident</h3>
+                <button class="icon-btn-ghost close-panel-btn">
+                  <img
+                    src="../assets/icons/close.svg"
+                    alt="close"
+                    class="icon-sm"
+                  />
+                </button>
+              </div>
+              <div class="side-panel-content">
+                <div class="suggestion-card">
+                  <h4>Disable User Account</h4>
+                  <p>
+                    The "Disable User Account" suggestion aims to temporarily
+                    suspend access privileges for the user account identified in
+                    the alert.
+                  </p>
+                  <div class="suggestion-actions">
+                    <img
+                      src="../assets/icons/thumb_up.svg"
+                      alt="thumb_up"
+                      class="icon-sm"
+                    />
+                    <img
+                      src="../assets/icons/thumb_down.svg"
+                      alt="thumb_down"
+                      class="icon-sm"
+                    />
+                  </div>
+                </div>
+                <div class="suggestion-card">
+                  <h4>Review Access Controls</h4>
+                  <p>
+                    Conduct a thorough review of the user account's permissions
+                    and access controls. Ensure they align with the principle of
+                    least privilege.
+                  </p>
+                  <div class="suggestion-actions">
+                    <img
+                      src="../assets/icons/thumb_up.svg"
+                      alt="thumb_up"
+                      class="icon-sm"
+                    />
+                    <img
+                      src="../assets/icons/thumb_down.svg"
+                      alt="thumb_down"
+                      class="icon-sm"
+                    />
+                  </div>
+                </div>
+                <div class="suggestion-card">
+                  <h4>Monitor Network Traffic</h4>
+                  <p>
+                    Implement enhanced monitoring of network traffic associated
+                    with the affected user account and related systems.
+                  </p>
+                  <div class="suggestion-actions">
+                    <img
+                      src="../assets/icons/thumb_up.svg"
+                      alt="thumb_up"
+                      class="icon-sm"
+                    />
+                    <img
+                      src="../assets/icons/thumb_down.svg"
+                      alt="thumb_down"
+                      class="icon-sm"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Prediction Side Panel -->
+            <div class="side-panel-card active" id="prediction-panel">
+              <div class="side-panel-header">
+                <h3>Prediction for this Incident</h3>
+                <button class="icon-btn-ghost close-panel-btn">
+                  <img
+                    src="../assets/icons/close.svg"
+                    alt="close"
+                    class="icon-sm"
+                  />
+                </button>
+              </div>
+              <div class="side-panel-content">
+                <div class="suggestion-card">
+                  <h4>Pass-the-Hash</h4>
+                  <p>
+                    The attacker might use stolen credentials or hashes to
+                    authenticate and access other systems within the network
+                    without needing to crack passwords.
+                  </p>
+                </div>
+                <div class="suggestion-card">
+                  <h4>Pass-the-Ticket</h4>
+                  <p>
+                    Similar to pass-the-hash, this technique involves using
+                    Kerberos tickets obtained through compromised accounts to
+                    move laterally across systems. The attacker could exploit
+                    unpatched vulnerabilities.
+                  </p>
+                </div>
+                <div class="suggestion-card">
+                  <h4>Exploiting Vulnerabilities</h4>
+                  <p>
+                    The attacker could exploit unpatched vulnerabilities in
+                    systems or applications to gain further access within the
+                    network.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Two Columns -->
+          <div class="two-col-layout">
+            <!-- Analyst Notes -->
+            <div class="col-half col-half--auto card-main">
+              <h2 class="section-title section-title--spaced">Analyst Notes</h2>
+
+              <div class="note-card">
+                <div class="note-header">
+                  <div class="note-author">AI Summary</div>
+                  <div class="badge-pending">Pending</div>
+                </div>
+                <div class="note-content">
+                  Lorem ipsum dolor sit amet consectetur. Semper mi aliquet
+                  euismod aliquam placerat. Sit egestas sed at tempus. Lorem
+                  ipsum dolor sit amet consectetur. Semper mi aliquet euismod
+                  aliquam placerat. Sit egestas sed at tempus.
+                </div>
+                <div class="note-footer">
+                  was this helpful?
+                  <img
+                    src="../assets/icons/thumb_up.svg"
+                    alt="thumb_up"
+                    class="icon-sm icon-action"
+                  />
+                  <img
+                    src="../assets/icons/thumb_down.svg"
+                    alt="thumb_down"
+                    class="icon-sm icon-action"
+                  />
+                </div>
+              </div>
+
+              <div class="note-card standard">
+                <div class="note-header">
+                  <div>
+                    <div class="note-author standard">Analyst 2</div>
+                    <div class="note-date">
+                      <img
+                        src="../assets/icons/calendar.svg"
+                        alt="schedule"
+                        class="icon-img-sm"
+                      />
+                      23 February 2026 at 15:55:02
+                    </div>
+                  </div>
+                  <div class="note-actions">
+                    <img
+                      src="../assets/icons/edit.svg"
+                      alt="edit"
+                      class="icon-md icon-action"
+                    />
+                    <img
+                      src="../assets/icons/delete.svg"
+                      alt="delete"
+                      class="icon-md icon-action"
+                    />
+                  </div>
+                </div>
+                <div class="note-content">
+                  Lorem ipsum dolor sit amet consectetur. Eros sit malesuada
+                  sapien dui. Eu et odio dictum purus adipiscing lacinia.
+                </div>
+              </div>
+
+              <div class="note-card note-card--add">
+                <span class="note-add-label">Add Note</span>
+                <div class="note-add-actions">
+                  <img
+                    src="../assets/icons/confirm.svg"
+                    alt="check_circle"
+                    class="filled icon-success"
+                  />
+                  <img
+                    src="../assets/icons/close_colored.svg"
+                    alt="cancel"
+                    class="filled icon-error"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Incident History -->
+            <div class="col-half col-half--auto card-main">
+              <h2 class="section-title section-title--spaced">
+                Incident History
+              </h2>
+
+              <div class="history-card">
+                <div>
+                  <div class="history-title">
+                    BB - IDEA AD User Account Deleted
+                  </div>
+                  <div class="history-date">20 February 2026 at 12:54:40</div>
+                </div>
+                <img
+                  src="../assets/icons/north_east.svg"
+                  alt="north_east"
+                  class="icon-muted"
+                />
+              </div>
+
+              <div class="history-card">
+                <div>
+                  <div class="history-title">
+                    BB - IDEA AD User Account Deleted
+                  </div>
+                  <div class="history-date">20 February 2026 at 12:54:40</div>
+                </div>
+                <img
+                  src="../assets/icons/north_east.svg"
+                  alt="north_east"
+                  class="icon-muted"
+                />
+              </div>
+
+              <div class="history-card">
+                <div>
+                  <div class="history-title">
+                    BB - IDEA AD User Account Deleted
+                  </div>
+                  <div class="history-date">20 February 2026 at 12:54:40</div>
+                </div>
+                <img
+                  src="../assets/icons/north_east.svg"
+                  alt="north_east"
+                  class="icon-muted"
+                />
+              </div>
+
+              <div class="history-card">
+                <div>
+                  <div class="history-title">
+                    BB - IDEA AD User Account Deleted
+                  </div>
+                  <div class="history-date">20 February 2026 at 12:54:40</div>
+                </div>
+                <img
+                  src="../assets/icons/north_east.svg"
+                  alt="north_east"
+                  class="icon-muted"
+                />
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <button class="fab">
+        <img src="../assets/chatbot.svg" alt="Chatbot" class="fab-img" />
+      </button>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="category-modal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <div class="modal-header-left">
+            <img
+              src="../assets/icons/high_severity.svg"
+              alt="warning"
+              class="icon-md icon-muted"
+            />
+            <span class="icon-muted">Category:</span>
+            <span class="metadata-tag">ACCESS DENIED</span>
+            <span class="metadata-tag">USER LOGIN FAILURE</span>
+          </div>
+          <button class="icon-btn-ghost close-modal-btn">
+            <img src="../assets/icons/close.svg" alt="close" class="icon-sm" />
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-table-wrapper">
+            <table class="modal-table">
+              <thead>
+                <tr>
+                  <th>CREATED AT</th>
+                  <th>DISCRIPTION</th>
+                  <th>RULES</th>
+                  <th>TITLE</th>
+                  <th>OFFENSE ID</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="modal-pagination">
+            <img
+              src="../assets/icons/previous_page.svg"
+              alt="chevron_left"
+              class="icon-sm"
+            />
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <img
+              src="../assets/icons/next_page.svg"
+              alt="chevron_right"
+              class="icon-sm"
+            />
+          </div>
+          <div class="modal-per-page">10/ page</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="mitre-modal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <div class="modal-header-left">
+            <img
+              src="../assets/icons/mitre_category.svg"
+              alt="security"
+              class="icon-md icon-muted"
+            />
+            <span class="icon-muted">Mitre Category:</span>
+            <span class="metadata-tag">EXFILTRATION</span>
+          </div>
+          <button class="icon-btn-ghost close-modal-btn">
+            <img src="../assets/icons/close.svg" alt="close" class="icon-sm" />
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-table-wrapper">
+            <table class="modal-table">
+              <thead>
+                <tr>
+                  <th>CREATED AT</th>
+                  <th>DISCRIPTION</th>
+                  <th>RULES</th>
+                  <th>TITLE</th>
+                  <th>OFFENSE ID</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+                <tr>
+                  <td>2026-03-12T14:22559Z</td>
+                  <td>The system detected t...</td>
+                  <td>ID: 132000, type:BB:ID...</td>
+                  <td>IDEA AD User Account...</td>
+                  <td>1773325379</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="modal-pagination">
+            <img
+              src="../assets/icons/previous_page.svg"
+              alt="chevron_left"
+              class="icon-sm"
+            />
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <img
+              src="../assets/icons/next_page.svg"
+              alt="chevron_right"
+              class="icon-sm"
+            />
+          </div>
+          <div class="modal-per-page">10/ page</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Side Drawer for Retrospection Detail -->
+    <div class="side-drawer-overlay" id="retrospection-drawer-overlay"></div>
+    <div class="side-drawer" id="retrospection-drawer">
+      <div class="side-drawer-header">
+        <h3>MITRE ATT&CK Tactic</h3>
+        <button class="icon-btn-ghost close-drawer-btn">
+          <img src="../assets/icons/close.svg" alt="close" class="icon-sm" />
+        </button>
+      </div>
+      <div class="side-drawer-content">
+        <div class="vertical-timeline">
+          <div class="vt-item">
+            <div class="vt-stage-info">
+              <span class="vt-stage-number">STAGE 1</span>
+              <span class="vt-stage-name">Reconnaissance</span>
+              <span class="stage-status detected">DETECTED</span>
+            </div>
+
+            <div class="vt-card" style="margin-bottom: 16px">
+              <div class="vt-card-meta">
+                <span
+                  ><img
+                    src="../assets/icons/calendar.svg"
+                    alt="calendar_today"
+                    class="icon-img-sm"
+                  />
+                  26/03/25</span
+                >
+                <span
+                  ><img
+                    src="../assets/icons/schedule.svg"
+                    alt="schedule"
+                    class="icon-img-sm"
+                  />
+                  16:11:37z</span
+                >
+              </div>
+              <div class="vt-card-text">
+                On 26-03-25T16:11:37Z, from source IP 192.230.125.220, a
+                high-severity custom policy violation alert was triggered
+                targeting destination IP 10.94.72.151. The alert, categorized
+                under "Suspicious Pattern Detected," involved a POST request
+                with specific user agent strings indicating potential suspicious
+                activity, suggesting an attempt to bypass security measures
+                related to the BrandX_Voda_Idea_Rate_Limit pol...
+              </div>
+              <div class="vt-card-footer">
+                <a href="#" class="vt-card-link"
+                  >1 View Incident(s)
+                  <img
+                    src="../assets/icons/north_east.svg"
+                    alt="north_east"
+                    class="icon-xs"
+                /></a>
+                <span class="vt-card-more">More</span>
+              </div>
+            </div>
+
+            <div class="vt-card">
+              <div class="vt-card-meta">
+                <span
+                  ><img
+                    src="../assets/icons/calendar.svg"
+                    alt="calendar_today"
+                    class="icon-img-sm"
+                  />
+                  26/03/25</span
+                >
+                <span
+                  ><img
+                    src="../assets/icons/schedule.svg"
+                    alt="schedule"
+                    class="icon-img-sm"
+                  />
+                  16:11:57z</span
+                >
+              </div>
+              <div class="vt-card-text">
+                On 26-03-25T16:11:37Z, from source IP 192.230.125.220, a
+                high-severity custom policy violation alert was triggered
+                targeting destination IP 10.94.72.151. The alert, categorized
+                under "Suspicious Pattern Detected," involved a POST request
+                with specific user agent strings indicating potential suspicious
+                activity, suggesting an attempt to bypass security measures
+                related to the BrandX_Voda_Idea_Rate_Limit pol...
+              </div>
+              <div class="vt-card-footer">
+                <a href="#" class="vt-card-link"
+                  >1 View Incident(s)
+                  <img
+                    src="../assets/icons/north_east.svg"
+                    alt="north_east"
+                    class="icon-xs"
+                /></a>
+                <span class="vt-card-more">More</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="vt-item not-detected">
+            <div class="vt-stage-info">
+              <span class="vt-stage-number">STAGE 2</span>
+              <span
+                class="vt-stage-name"
+                style="color: var(--color-on-surface-variant)"
+                >Resource Development</span
+              >
+              <span class="stage-status not-detected">NOT DETECTED</span>
+            </div>
+          </div>
+
+          <div class="vt-item">
+            <div class="vt-stage-info">
+              <span class="vt-stage-number">STAGE 3</span>
+              <span class="vt-stage-name">Reconnaissance</span>
+              <span class="stage-status detected">DETECTED</span>
+            </div>
+            <div class="vt-card">
+              <div class="vt-card-meta">
+                <span
+                  ><img
+                    src="../assets/icons/calendar.svg"
+                    alt="calendar_today"
+                    class="icon-img-sm"
+                  />
+                  26/03/25</span
+                >
+                <span
+                  ><img
+                    src="../assets/icons/schedule.svg"
+                    alt="schedule"
+                    class="icon-img-sm"
+                  />
+                  16:11:37z</span
+                >
+              </div>
+              <div class="vt-card-text">
+                On 26-03-25T16:11:37Z, from source IP 192.230.125.220, a
+                high-severity custom policy violation alert was triggered...
+              </div>
+              <div class="vt-card-footer">
+                <a href="#" class="vt-card-link"
+                  >1 View Incident(s)
+                  <img
+                    src="../assets/icons/north_east.svg"
+                    alt="north_east"
+                    class="icon-xs"
+                /></a>
+                <span class="vt-card-more">More</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

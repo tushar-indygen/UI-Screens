@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPARC - Dashboard</title>
+    <link rel="stylesheet" href="globals.css" />
+  </head>
+  <body class="light">
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <div class="sidebar-logo-icon">
+            <img src="../assets/logo.png" alt="Logo" class="logo-img" />
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="Dashboard.html" class="nav-item active">
+              <img
+                src="../assets/icons/dashboard_icon.svg"
+                alt="Analytics"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Investigation.html" class="nav-item">
+              <img
+                src="../assets/icons/investigate_page.svg"
+                alt="Investigate"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Incidents List.html" class="nav-item">
+              <img
+                src="../assets/icons/incident_page.svg"
+                alt="Incidents"
+                class="nav-icon"
+              />
+            </a>
+          </div>
+          <div class="nav-spacer"></div>
+          <a href="Settings (Integrations).html" class="nav-item">
+            <img
+              src="../assets/icons/settings.svg"
+              alt="Settings"
+              class="nav-icon"
+            />
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content-wrapper">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="topbar-title">
+            <span class="active-path">Dashboard</span>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/light_mode.svg"
+                alt="Light Mode"
+                class="nav-icon"
+              />
+            </button>
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/account.svg"
+                alt="Account"
+                class="nav-icon"
+              />
+            </button>
+          </div>
+        </header>
+
+        <!-- Canvas -->
+        <main class="main-canvas">
+          <!-- Metrics Row -->
+          <div class="metrics-row">
+            <div class="metric-card">
+              <div class="metric-header">
+                <span>Total Offenses</span>
+                <img
+                  src="../assets/icons/total_offenses.svg"
+                  alt="Total Offenses"
+                  class="metric-icon-img"
+                />
+              </div>
+              <div class="metric-value">246</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-header">
+                <span>Total Incidents</span>
+                <img
+                  src="../assets/icons/total_incidents.svg"
+                  alt="Total Incidents"
+                  class="metric-icon-img"
+                />
+              </div>
+              <div class="metric-value">246</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-header">
+                <span>Offense: Incident Ratio</span>
+                <img
+                  src="../assets/icons/offense__incident_ratio.svg"
+                  alt="Ratio"
+                  class="metric-icon-img"
+                />
+              </div>
+              <div class="metric-value">1.0:1</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-header">
+                <span>High Severity</span>
+                <img
+                  src="../assets/icons/high_severity.svg"
+                  alt="High Severity"
+                  class="metric-icon-img"
+                />
+              </div>
+              <div class="metric-value">1</div>
+            </div>
+          </div>
+
+          <!-- Filters Row -->
+          <div class="filters-row">
+            <div class="filter-dropdown">
+              <span class="filter-label">APT groups</span>
+              <div class="filter-value-row">
+                <span class="filter-value">All groups</span>
+                <img
+                  src="../assets/icons/expand_more.svg"
+                  alt="expand_more"
+                  class="icon-sm icon-muted"
+                />
+              </div>
+            </div>
+            <div class="filter-dropdown">
+              <span class="filter-label">Timeline</span>
+              <div class="filter-value-row">
+                <span class="filter-value"
+                  >Last week <span class="badge">1</span></span
+                >
+                <img
+                  src="../assets/icons/expand_more.svg"
+                  alt="expand_more"
+                  class="icon-sm icon-muted"
+                />
+              </div>
+            </div>
+            <div class="filter-dropdown">
+              <span class="filter-label">Confidence score</span>
+              <div class="filter-value-row">
+                <span class="filter-value">Above 60</span>
+                <img
+                  src="../assets/icons/expand_more.svg"
+                  alt="expand_more"
+                  class="icon-sm icon-muted"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- MITRE Flow Chart -->
+          <div class="dashboard-chart-wrapper">
+            <canvas id="dashboardChart"></canvas>
+          </div>
+
+          <!-- Bottom Controls -->
+          <div class="bottom-controls">
+            <div class="zoom-controls">
+              <button class="zoom-btn">
+                <img src="../assets/icons/add.svg" alt="add" class="icon-md" />
+              </button>
+              <div class="zoom-divider"></div>
+              <button class="zoom-btn">
+                <img
+                  src="../assets/icons/delete.svg"
+                  alt="remove"
+                  class="icon-md"
+                />
+              </button>
+            </div>
+
+            <div class="timeline-slider">
+              <div class="timeline-point">
+                <span>1 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+              <div class="timeline-point">
+                <span>2 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+              <div class="timeline-point active">
+                <span>3 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+              <div class="timeline-point">
+                <span>4 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+              <div class="timeline-point">
+                <span>5 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+              <div class="timeline-point">
+                <span>6 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+              <div class="timeline-point">
+                <span>7 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+              <div class="timeline-point">
+                <span>8 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+              <div class="timeline-point">
+                <span>9 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+              <div class="timeline-point">
+                <span>10 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+              <div class="timeline-point">
+                <span>11 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+              <div class="timeline-point">
+                <span>12 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+              <div class="timeline-point">
+                <span>13 Jan</span>
+                <div class="timeline-tick"></div>
+              </div>
+            </div>
+
+            <div class="view-toggles">
+              <button class="view-toggle-btn active">
+                <img
+                  src="../assets/icons/grid_view.svg"
+                  alt="grid_view"
+                  class="nav-icon"
+                />
+              </button>
+              <button class="view-toggle-btn">
+                <img
+                  src="../assets/icons/view_list.svg"
+                  alt="view_list"
+                  class="nav-icon"
+                />
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <button class="fab">
+        <img src="../assets/chatbot.svg" alt="Chatbot" class="fab-img" />
+      </button>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+      (function () {
+        const STAGES = [
+          "Reconnaissance",
+          "Resource\nDevelopment",
+          "Initial\nAccess",
+          "Execution",
+          "Persistence",
+          "Privilege\nEscalation",
+          "Defense\nEvasion",
+          "Credential\nAccess",
+          "Discovery",
+          "Lateral\nMovement",
+          "Collection",
+          "Command &\nControl",
+          "Exfiltration",
+          "Impact",
+        ];
+
+        const MAX_Y = 450;
+        const GRID_STEP = 50;
+
+        // Flow paths: [stageIndex, offenseCount]
+        const FLOWS = [
+          {
+            color: "#e86d3f",
+            w: 1.8,
+            pts: [
+              [0, 380],
+              [1, 350],
+              [2, 300],
+              [3, 260],
+              [6, 230],
+              [7, 200],
+              [8, 175],
+              [9, 155],
+              [11, 135],
+              [12, 115],
+            ],
+          },
+          {
+            color: "#e86d3f",
+            w: 1.5,
+            pts: [
+              [0, 320],
+              [1, 295],
+              [2, 270],
+              [3, 245],
+              [4, 215],
+              [6, 185],
+              [8, 160],
+              [12, 140],
+              [13, 120],
+            ],
+          },
+          {
+            color: "#4371e4",
+            w: 1.8,
+            pts: [
+              [0, 405],
+              [1, 385],
+              [2, 355],
+              [3, 325],
+              [5, 295],
+              [6, 265],
+              [9, 245],
+              [10, 225],
+              [13, 205],
+            ],
+          },
+          {
+            color: "#4371e4",
+            w: 1.5,
+            pts: [
+              [0, 255],
+              [1, 235],
+              [3, 205],
+              [4, 185],
+              [7, 165],
+              [8, 145],
+              [11, 125],
+              [13, 105],
+            ],
+          },
+          {
+            color: "#9c5bd6",
+            w: 1.8,
+            pts: [
+              [0, 305],
+              [1, 285],
+              [2, 265],
+              [3, 245],
+              [5, 220],
+              [6, 200],
+              [8, 180],
+              [10, 160],
+              [12, 145],
+            ],
+          },
+          {
+            color: "#9c5bd6",
+            w: 1.5,
+            pts: [
+              [0, 200],
+              [1, 185],
+              [2, 165],
+              [4, 145],
+              [6, 125],
+              [9, 112],
+              [11, 100],
+            ],
+          },
+          {
+            color: "#2fa84f",
+            w: 1.8,
+            pts: [
+              [0, 425],
+              [1, 405],
+              [2, 375],
+              [3, 345],
+              [4, 315],
+              [6, 285],
+              [7, 265],
+              [11, 245],
+              [13, 225],
+            ],
+          },
+          {
+            color: "#2fa84f",
+            w: 1.5,
+            pts: [
+              [0, 155],
+              [2, 142],
+              [3, 132],
+              [5, 122],
+              [7, 112],
+              [9, 102],
+              [12, 92],
+            ],
+          },
+          {
+            color: "#e84393",
+            w: 1.8,
+            pts: [
+              [0, 345],
+              [1, 318],
+              [2, 295],
+              [3, 275],
+              [5, 252],
+              [7, 232],
+              [9, 212],
+              [11, 192],
+              [13, 175],
+            ],
+          },
+          {
+            color: "#e84393",
+            w: 1.5,
+            pts: [
+              [0, 175],
+              [2, 162],
+              [4, 150],
+              [6, 138],
+              [9, 125],
+              [12, 115],
+            ],
+          },
+          {
+            color: "#00b5d8",
+            w: 1.8,
+            pts: [
+              [0, 285],
+              [2, 265],
+              [4, 245],
+              [5, 225],
+              [6, 205],
+              [8, 185],
+              [10, 165],
+              [13, 148],
+            ],
+          },
+          {
+            color: "#00b5d8",
+            w: 1.5,
+            pts: [
+              [0, 185],
+              [1, 168],
+              [3, 155],
+              [6, 145],
+              [8, 132],
+              [11, 122],
+              [12, 112],
+            ],
+          },
+          {
+            color: "#f0a500",
+            w: 1.8,
+            pts: [
+              [0, 435],
+              [1, 422],
+              [2, 405],
+              [3, 385],
+              [4, 365],
+              [5, 345],
+              [7, 322],
+              [10, 305],
+              [12, 282],
+              [13, 262],
+            ],
+          },
+          {
+            color: "#f0a500",
+            w: 1.5,
+            pts: [
+              [0, 132],
+              [2, 122],
+              [4, 112],
+              [7, 102],
+              [9, 92],
+              [12, 82],
+            ],
+          },
+          {
+            color: "#ff6b6b",
+            w: 1.8,
+            pts: [
+              [0, 365],
+              [1, 342],
+              [2, 322],
+              [3, 302],
+              [4, 282],
+              [5, 262],
+              [8, 242],
+              [9, 222],
+              [13, 205],
+            ],
+          },
+          {
+            color: "#c62bd4",
+            w: 1.8,
+            pts: [
+              [0, 245],
+              [1, 225],
+              [2, 205],
+              [4, 185],
+              [5, 165],
+              [7, 152],
+              [9, 142],
+              [12, 132],
+            ],
+          },
+          {
+            color: "#5bc8f5",
+            w: 1.5,
+            pts: [
+              [0, 105],
+              [2, 97],
+              [3, 92],
+              [6, 87],
+              [8, 82],
+              [10, 77],
+              [13, 72],
+            ],
+          },
+          {
+            color: "#a0c040",
+            w: 1.5,
+            pts: [
+              [0, 445],
+              [1, 440],
+              [2, 430],
+              [3, 420],
+              [4, 405],
+              [6, 390],
+              [8, 370],
+              [10, 355],
+              [13, 340],
+            ],
+          },
+        ];
+
+        function draw() {
+          const canvas = document.getElementById("dashboardChart");
+          if (!canvas) return;
+          const wrapper = canvas.parentElement;
+          const dpr = window.devicePixelRatio || 1;
+          const cssW = wrapper.clientWidth - 32;
+          const cssH = 420;
+          canvas.width = cssW * dpr;
+          canvas.height = cssH * dpr;
+          canvas.style.width = cssW + "px";
+          canvas.style.height = cssH + "px";
+          const ctx = canvas.getContext("2d");
+          ctx.scale(dpr, dpr);
+
+          const pL = 48,
+            pR = 12,
+            pT = 28,
+            pB = 52;
+          const cW = cssW - pL - pR;
+          const cH = cssH - pT - pB;
+          const N = STAGES.length;
+          const sw = cW / (N - 1); // stage spacing
+
+          function xy(si, count) {
+            return [pL + si * sw, pT + cH - (count / MAX_Y) * cH];
+          }
+
+          // Grid lines
+          ctx.lineWidth = 1;
+          for (let v = 0; v <= MAX_Y; v += GRID_STEP) {
+            const y = pT + cH - (v / MAX_Y) * cH;
+            ctx.strokeStyle = v === 0 ? "rgba(0,0,0,0.15)" : "rgba(0,0,0,0.05)";
+            ctx.beginPath();
+            ctx.moveTo(pL, y);
+            ctx.lineTo(pL + cW, y);
+            ctx.stroke();
+          }
+
+          // Vertical stage dividers
+          ctx.strokeStyle = "rgba(0,0,0,0.04)";
+          for (let i = 0; i < N; i++) {
+            const x = pL + i * sw;
+            ctx.beginPath();
+            ctx.moveTo(x, pT);
+            ctx.lineTo(x, pT + cH);
+            ctx.stroke();
+          }
+
+          // Y-axis labels
+          ctx.fillStyle = "#999";
+          ctx.font = `10px "Work Sans", sans-serif`;
+          ctx.textAlign = "right";
+          for (let v = 0; v <= MAX_Y; v += GRID_STEP) {
+            const y = pT + cH - (v / MAX_Y) * cH;
+            ctx.fillText(v, pL - 6, y + 4);
+          }
+
+          // Y-axis title
+          ctx.save();
+          ctx.translate(11, pT + cH / 2);
+          ctx.rotate(-Math.PI / 2);
+          ctx.textAlign = "center";
+          ctx.font = `9px "Work Sans", sans-serif`;
+          ctx.fillStyle = "#aaa";
+          ctx.fillText("No. of Offenses", 0, 0);
+          ctx.restore();
+
+          // Stage labels top (Stage N)
+          ctx.textAlign = "center";
+          ctx.font = `9px "Work Sans", sans-serif`;
+          ctx.fillStyle = "#bbb";
+          for (let i = 0; i < N; i++) {
+            ctx.fillText("Stage " + (i + 1), pL + i * sw, pT - 10);
+          }
+
+          // Stage names bottom
+          ctx.fillStyle = "#888";
+          ctx.font = `8px "Work Sans", sans-serif`;
+          for (let i = 0; i < N; i++) {
+            const x = pL + i * sw;
+            const lines = STAGES[i].split("\n");
+            lines.forEach((line, li) => {
+              ctx.fillText(line, x, pT + cH + 14 + li * 12);
+            });
+          }
+
+          // Draw flow paths (back to front by z-order)
+          FLOWS.forEach((flow) => {
+            const pts = flow.pts.map(([s, c]) => xy(s, c));
+
+            // Curve
+            ctx.strokeStyle = flow.color + "bb";
+            ctx.lineWidth = flow.w;
+            ctx.lineJoin = "round";
+            ctx.beginPath();
+            ctx.moveTo(pts[0][0], pts[0][1]);
+            for (let i = 1; i < pts.length; i++) {
+              const [x0, y0] = pts[i - 1];
+              const [x1, y1] = pts[i];
+              const mx = (x0 + x1) / 2;
+              ctx.bezierCurveTo(mx, y0, mx, y1, x1, y1);
+            }
+            ctx.stroke();
+
+            // Dots
+            pts.forEach(([x, y], i) => {
+              const r = i === 0 || i === pts.length - 1 ? 5 : 3.5;
+              // Halo
+              ctx.beginPath();
+              ctx.arc(x, y, r + 4, 0, Math.PI * 2);
+              ctx.fillStyle = flow.color + "28";
+              ctx.fill();
+              // Dot
+              ctx.beginPath();
+              ctx.arc(x, y, r, 0, Math.PI * 2);
+              ctx.fillStyle = flow.color;
+              ctx.fill();
+              // White inner
+              ctx.beginPath();
+              ctx.arc(x, y, r - 1.5, 0, Math.PI * 2);
+              ctx.fillStyle = "rgba(255,255,255,0.4)";
+              ctx.fill();
+            });
+          });
+        }
+
+        document.addEventListener("DOMContentLoaded", draw);
+        window.addEventListener("resize", draw);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPARC - Profile</title>
+    <link rel="stylesheet" href="globals.css" />
+  </head>
+  <body class="light">
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <div class="sidebar-logo-icon">
+            <img src="../assets/logo.png" alt="Logo" class="logo-img" />
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="Dashboard.html" class="nav-item">
+              <img
+                src="../assets/icons/dashboard_icon.svg"
+                alt="Analytics"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Investigation.html" class="nav-item">
+              <img
+                src="../assets/icons/investigate_page.svg"
+                alt="Investigate"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Incidents List.html" class="nav-item">
+              <img
+                src="../assets/icons/incident_page.svg"
+                alt="Incidents"
+                class="nav-icon"
+              />
+            </a>
+          </div>
+          <div class="nav-spacer"></div>
+          <a href="Settings (Integrations).html" class="nav-item">
+            <img
+              src="../assets/icons/settings.svg"
+              alt="Settings"
+              class="nav-icon"
+            />
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content-wrapper">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="topbar-title">
+            <span class="active-path">Profile</span>
+          </div>
+
+          <div class="topbar-actions">
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/light_mode.svg"
+                alt="Light Mode"
+                class="nav-icon"
+              />
+            </button>
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/account.svg"
+                alt="Account"
+                class="nav-icon"
+              />
+            </button>
+          </div>
+        </header>
+
+        <!-- Canvas -->
+        <main class="main-canvas">
+          <div class="profile-card">
+            <h2 class="profile-section-title">Account Details</h2>
+
+            <div class="profile-grid">
+              <!-- Row 1 -->
+              <div class="profile-field">
+                <div class="profile-avatar-large">JD</div>
+                <div>
+                  <div class="profile-label">Username</div>
+                  <div class="profile-value">@John_Doe_team_1</div>
+                </div>
+              </div>
+
+              <div class="profile-field">
+                <div>
+                  <div class="profile-label">Email</div>
+                  <div class="profile-value">johndoe1@sparc.in</div>
+                </div>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="profile-field profile-field--indented">
+                <div>
+                  <div class="profile-label">Account Created</div>
+                  <div class="profile-value">04/09/2024, 18:15:59</div>
+                </div>
+              </div>
+
+              <div class="profile-field">
+                <div>
+                  <div class="profile-label">Last Updated</div>
+                  <div class="profile-value">23/03/2026, 12:34:39</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2 class="profile-section-title">Security Settings</h2>
+
+            <div class="profile-grid">
+              <div class="profile-field profile-field--indented">
+                <div>
+                  <div class="profile-label">Email Visibility</div>
+                  <div class="profile-value">Not Visible</div>
+                </div>
+              </div>
+
+              <div class="profile-field">
+                <div>
+                  <div class="profile-label">Verified</div>
+                  <div class="profile-value">Yes</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <button class="fab">
+        <img src="../assets/chatbot.svg" alt="Chatbot" class="fab-img" />
+      </button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

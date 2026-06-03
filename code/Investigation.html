@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPARC - Investigation</title>
+    <link rel="stylesheet" href="globals.css" />
+  </head>
+  <body class="light">
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <div class="sidebar-logo-icon">
+            <img src="../assets/logo.png" alt="Logo" class="logo-img" />
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="Dashboard.html" class="nav-item">
+              <img
+                src="../assets/icons/dashboard_icon.svg"
+                alt="Analytics"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Investigation.html" class="nav-item active">
+              <img
+                src="../assets/icons/investigate_page.svg"
+                alt="Investigate"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Incidents List.html" class="nav-item">
+              <img
+                src="../assets/icons/incident_page.svg"
+                alt="Incidents"
+                class="nav-icon"
+              />
+            </a>
+          </div>
+          <div class="nav-spacer"></div>
+          <a href="Settings (Integrations).html" class="nav-item">
+            <img
+              src="../assets/icons/settings.svg"
+              alt="Settings"
+              class="nav-icon"
+            />
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content-wrapper">
+        <header class="topbar">
+          <div class="topbar-title">
+            <span class="active-path">Investigation</span>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/light_mode.svg"
+                alt="Light Mode"
+                class="nav-icon"
+              />
+            </button>
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/account.svg"
+                alt="Account"
+                class="nav-icon"
+              />
+            </button>
+          </div>
+        </header>
+
+        <main class="main-canvas">
+          <!-- Event / Incident Toggle -->
+          <div class="investigation-card">
+            <div class="radio-group">
+              <label class="radio-label">
+                <input
+                  type="radio"
+                  name="investigation_type"
+                  value="event"
+                  checked
+                />
+                Event
+              </label>
+              <label class="radio-label">
+                <input
+                  type="radio"
+                  name="investigation_type"
+                  value="incident"
+                />
+                Incident
+              </label>
+            </div>
+          </div>
+
+          <!-- Date / Time Row -->
+          <div class="datetime-row">
+            <!-- Start Date -->
+            <div class="datetime-card picker-anchor" id="start-date-anchor">
+              <span class="datetime-label">Start Date</span>
+              <div
+                class="datetime-value"
+                id="start-date-trigger"
+                style="cursor: pointer"
+              >
+                <span id="start-date-display">01-01-2026</span>
+                <img
+                  src="../assets/icons/calendar_month.svg"
+                  alt="calendar_month"
+                  class="nav-icon"
+                />
+              </div>
+              <!-- Calendar Popover -->
+              <div class="picker-popover" id="cal-start">
+                <div class="cal-body-wrapper">
+                  <div class="cal-header">
+                    <span class="cal-header-value" id="cal-start-header"
+                      >01 - 01 - 2026</span
+                    >
+                    <img
+                      src="../assets/icons/calendar_month.svg"
+                      alt="calendar_month"
+                      class="icon-sm icon-muted"
+                    />
+                  </div>
+                  <div class="cal-nav">
+                    <button class="cal-nav-btn" data-cal="start" data-dir="-1">
+                      <img
+                        src="../assets/icons/previous_month.svg"
+                        alt="Previous"
+                        class="page-item icon-img-sm"
+                      />
+                    </button>
+                    <div class="cal-nav-selects">
+                      <select
+                        class="cal-nav-select"
+                        id="cal-start-month"
+                      ></select>
+                      <select
+                        class="cal-nav-select"
+                        id="cal-start-year"
+                      ></select>
+                    </div>
+                    <button class="cal-nav-btn" data-cal="start" data-dir="1">
+                      <img
+                        src="../assets/icons/next_month.svg"
+                        alt="Next"
+                        class="page-item icon-img-sm"
+                      />
+                    </button>
+                  </div>
+                  <div class="cal-grid" id="cal-start-grid"></div>
+                </div>
+                <div class="cal-footer">
+                  <button class="btn-reset" data-cal="start">Reset</button>
+                  <button class="btn-cancel" data-cal="start">Cancel</button>
+                  <button class="btn-apply" data-cal="start">Apply</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- End Date -->
+            <div class="datetime-card picker-anchor" id="end-date-anchor">
+              <span class="datetime-label">End Date</span>
+              <div
+                class="datetime-value"
+                id="end-date-trigger"
+                style="cursor: pointer"
+              >
+                <span id="end-date-display">12-01-2026</span>
+                <img
+                  src="../assets/icons/calendar_month.svg"
+                  alt="calendar_month"
+                  class="nav-icon"
+                />
+              </div>
+              <!-- Calendar Popover -->
+              <div class="picker-popover" id="cal-end">
+                <div class="cal-body-wrapper">
+                  <div class="cal-header">
+                    <span class="cal-header-value" id="cal-end-header"
+                      >12 - 01 - 2026</span
+                    >
+                    <img
+                      src="../assets/icons/calendar_month.svg"
+                      alt="calendar_month"
+                      class="icon-sm icon-muted"
+                    />
+                  </div>
+                  <div class="cal-nav">
+                    <button class="cal-nav-btn" data-cal="end" data-dir="-1">
+                      <img
+                        src="../assets/icons/previous_month.svg"
+                        alt="Previous"
+                        class="page-item icon-img-sm"
+                      />
+                    </button>
+                    <div class="cal-nav-selects">
+                      <select
+                        class="cal-nav-select"
+                        id="cal-end-month"
+                      ></select>
+                      <select class="cal-nav-select" id="cal-end-year"></select>
+                    </div>
+                    <button class="cal-nav-btn" data-cal="end" data-dir="1">
+                      <img
+                        src="../assets/icons/next_month.svg"
+                        alt="Next"
+                        class="page-item icon-img-sm"
+                      />
+                    </button>
+                  </div>
+                  <div class="cal-grid" id="cal-end-grid"></div>
+                </div>
+                <div class="cal-footer">
+                  <button class="btn-reset" data-cal="end">Reset</button>
+                  <button class="btn-cancel" data-cal="end">Cancel</button>
+                  <button class="btn-apply" data-cal="end">Apply</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Start Time -->
+            <div class="datetime-card picker-anchor" id="start-time-anchor">
+              <span class="datetime-label">Start Time</span>
+              <div
+                class="datetime-value"
+                id="start-time-trigger"
+                style="cursor: pointer"
+              >
+                <span id="start-time-display">14:29</span>
+                <img
+                  src="../assets/icons/schedule.svg"
+                  alt="schedule"
+                  class="nav-icon"
+                />
+              </div>
+              <!-- Time Popover -->
+              <div class="time-picker-popover" id="tp-start">
+                <div class="time-display" id="tp-start-display">14:29</div>
+                <div class="time-cols">
+                  <div class="time-col">
+                    <button
+                      class="time-spinner-btn"
+                      data-tp="start"
+                      data-unit="h"
+                      data-dir="1"
+                    >
+                      <img
+                        src="../assets/icons/expand_less.svg"
+                        alt="expand_less"
+                        class="icon-sm"
+                      />
+                    </button>
+                    <div class="time-spinner-val" id="tp-start-h">14</div>
+                    <button
+                      class="time-spinner-btn"
+                      data-tp="start"
+                      data-unit="h"
+                      data-dir="-1"
+                    >
+                      <img
+                        src="../assets/icons/expand_more.svg"
+                        alt="expand_more"
+                        class="icon-sm"
+                      />
+                    </button>
+                  </div>
+                  <div class="time-sep">:</div>
+                  <div class="time-col">
+                    <button
+                      class="time-spinner-btn"
+                      data-tp="start"
+                      data-unit="m"
+                      data-dir="1"
+                    >
+                      <img
+                        src="../assets/icons/expand_less.svg"
+                        alt="expand_less"
+                        class="icon-sm"
+                      />
+                    </button>
+                    <div class="time-spinner-val" id="tp-start-m">29</div>
+                    <button
+                      class="time-spinner-btn"
+                      data-tp="start"
+                      data-unit="m"
+                      data-dir="-1"
+                    >
+                      <img
+                        src="../assets/icons/expand_more.svg"
+                        alt="expand_more"
+                        class="icon-sm"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="time-footer">
+                  <button class="btn-cancel" data-tp="start">Cancel</button>
+                  <button class="btn-apply" data-tp="start">Apply</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- End Time -->
+            <div class="datetime-card picker-anchor" id="end-time-anchor">
+              <span class="datetime-label">End Time</span>
+              <div
+                class="datetime-value"
+                id="end-time-trigger"
+                style="cursor: pointer"
+              >
+                <span id="end-time-display">14:39</span>
+                <img
+                  src="../assets/icons/schedule.svg"
+                  alt="schedule"
+                  class="nav-icon"
+                />
+              </div>
+              <!-- Time Popover -->
+              <div class="time-picker-popover" id="tp-end">
+                <div class="time-display" id="tp-end-display">14:39</div>
+                <div class="time-cols">
+                  <div class="time-col">
+                    <button
+                      class="time-spinner-btn"
+                      data-tp="end"
+                      data-unit="h"
+                      data-dir="1"
+                    >
+                      <img
+                        src="../assets/icons/expand_less.svg"
+                        alt="expand_less"
+                        class="icon-sm"
+                      />
+                    </button>
+                    <div class="time-spinner-val" id="tp-end-h">14</div>
+                    <button
+                      class="time-spinner-btn"
+                      data-tp="end"
+                      data-unit="m"
+                      data-dir="-1"
+                    >
+                      <img
+                        src="../assets/icons/expand_more.svg"
+                        alt="expand_more"
+                        class="icon-sm"
+                      />
+                    </button>
+                  </div>
+                  <div class="time-sep">:</div>
+                  <div class="time-col">
+                    <button
+                      class="time-spinner-btn"
+                      data-tp="end"
+                      data-unit="m"
+                      data-dir="1"
+                    >
+                      <img
+                        src="../assets/icons/expand_less.svg"
+                        alt="expand_less"
+                        class="icon-sm"
+                      />
+                    </button>
+                    <div class="time-spinner-val" id="tp-end-m">39</div>
+                    <button
+                      class="time-spinner-btn"
+                      data-tp="end"
+                      data-unit="m"
+                      data-dir="-1"
+                    >
+                      <img
+                        src="../assets/icons/expand_more.svg"
+                        alt="expand_more"
+                        class="icon-sm"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="time-footer">
+                  <button class="btn-cancel" data-tp="end">Cancel</button>
+                  <button class="btn-apply" data-tp="end">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /datetime-row -->
+
+          <!-- Search Card with Autocomplete -->
+          <div class="search-card">
+            <input
+              type="text"
+              class="search-input"
+              id="search-input"
+              value="Category : Security Event"
+              placeholder="Search Events....."
+              autocomplete="off"
+            />
+            <div class="search-actions-wrapper">
+              <img
+                src="../assets/icons/info.svg"
+                alt="info"
+                class="search-info-icon"
+              />
+              <div class="search-actions">
+                <button class="btn-outline" id="search-cancel">Cancel</button>
+                <button class="btn-primary" id="search-apply">Apply</button>
+              </div>
+            </div>
+            <!-- Autocomplete Dropdown -->
+            <div class="search-autocomplete" id="search-autocomplete">
+              <div class="search-autocomplete-header">Suggestion</div>
+              <div
+                class="search-autocomplete-item"
+                data-value="Category : Security Event"
+              >
+                Security Event
+              </div>
+              <div
+                class="search-autocomplete-item"
+                data-value="Category : Security Access"
+              >
+                Security Access
+              </div>
+              <div
+                class="search-autocomplete-item"
+                data-value="Category : Authentication"
+              >
+                Authentication
+              </div>
+              <div
+                class="search-autocomplete-item"
+                data-value="Category : Network"
+              >
+                Network
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart -->
+          <div class="chart-card">
+            <div class="chart-title">No. of Events</div>
+            <div class="chart-area">
+              <div class="y-axis">
+                <span>130</span>
+                <span>120</span>
+                <span>110</span>
+                <span>100</span>
+                <span>90</span>
+                <span>80</span>
+                <span>70</span>
+                <span>60</span>
+                <span>50</span>
+                <span>40</span>
+                <span>30</span>
+                <span>20</span>
+                <span>10</span>
+                <span>0</span>
+              </div>
+              <div class="grid-lines">
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line grid-line--solid"></div>
+              </div>
+              <div class="bars-container">
+                <div class="bar-wrapper">
+                  <div class="bar" style="height: 30.7%"></div>
+                  <span class="x-label">1 Jan</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar" style="height: 61.5%"></div>
+                  <span class="x-label">2 Jan</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar" style="height: 100%"></div>
+                  <span class="x-label">3 Jan</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar" style="height: 30.7%"></div>
+                  <span class="x-label">4 Jan</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar" style="height: 26.9%"></div>
+                  <span class="x-label">5 Jan</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar" style="height: 7.6%"></div>
+                  <span class="x-label">6 Jan</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar" style="height: 7.6%"></div>
+                  <span class="x-label">7 Jan</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar" style="height: 38.4%"></div>
+                  <span class="x-label">8 Jan</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar" style="height: 15.3%"></div>
+                  <span class="x-label">9 Jan</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar" style="height: 50%"></div>
+                  <span class="x-label">10 Jan</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar" style="height: 65.3%"></div>
+                  <span class="x-label">11 Jan</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar" style="height: 23%"></div>
+                  <span class="x-label">12 Jan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table -->
+          <div class="card-main">
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Timestamp</th>
+                    <th>Source IP</th>
+                    <th>Des IP</th>
+                    <th>Source Port</th>
+                    <th>Dest Port</th>
+                    <th>Protocol</th>
+                    <th>Action</th>
+                    <th>Severity</th>
+                    <th>Device Vendor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>N/A</td>
+                    <td>172.18.112.58</td>
+                    <td>N/A</td>
+                    <td>58068</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>Login</td>
+                    <td>Inform...</td>
+                    <td>N/A</td>
+                  </tr>
+                  <tr>
+                    <td>N/A</td>
+                    <td>172.18.112.58</td>
+                    <td>N/A</td>
+                    <td>58068</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>Log out</td>
+                    <td>Inform...</td>
+                    <td>N/A</td>
+                  </tr>
+                  <tr>
+                    <td>N/A</td>
+                    <td>172.18.112.58</td>
+                    <td>N/A</td>
+                    <td>58068</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>Login</td>
+                    <td>Inform...</td>
+                    <td>N/A</td>
+                  </tr>
+                  <tr>
+                    <td>N/A</td>
+                    <td>172.18.112.58</td>
+                    <td>N/A</td>
+                    <td>58068</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>Log out</td>
+                    <td>Inform...</td>
+                    <td>N/A</td>
+                  </tr>
+                  <tr>
+                    <td>N/A</td>
+                    <td>172.18.112.58</td>
+                    <td>N/A</td>
+                    <td>58068</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>Login</td>
+                    <td>Inform...</td>
+                    <td>N/A</td>
+                  </tr>
+                  <tr>
+                    <td>N/A</td>
+                    <td>172.18.112.58</td>
+                    <td>N/A</td>
+                    <td>58068</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>Log out</td>
+                    <td>Inform...</td>
+                    <td>N/A</td>
+                  </tr>
+                  <tr>
+                    <td>N/A</td>
+                    <td>172.18.112.58</td>
+                    <td>N/A</td>
+                    <td>58068</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>Login</td>
+                    <td>Inform...</td>
+                    <td>N/A</td>
+                  </tr>
+                  <tr>
+                    <td>N/A</td>
+                    <td>172.18.112.58</td>
+                    <td>N/A</td>
+                    <td>58068</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>Log out</td>
+                    <td>Inform...</td>
+                    <td>N/A</td>
+                  </tr>
+                  <tr>
+                    <td>N/A</td>
+                    <td>172.18.112.58</td>
+                    <td>N/A</td>
+                    <td>58068</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>Login</td>
+                    <td>Inform...</td>
+                    <td>N/A</td>
+                  </tr>
+                  <tr>
+                    <td>N/A</td>
+                    <td>172.18.112.58</td>
+                    <td>N/A</td>
+                    <td>58068</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>Log out</td>
+                    <td>Inform...</td>
+                    <td>N/A</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="pagination">
+            <img
+              src="../assets/icons/previous_page.svg"
+              alt="Next"
+              class="page-item icon-img-sm"
+            />
+            <span class="page-item active">1</span>
+            <span class="page-item">2</span>
+            <span class="page-item">3</span>
+            <span class="page-item">4</span>
+            <span class="page-item">5</span>
+            <img
+              src="../assets/icons/next_page.svg"
+              alt="Next"
+              class="page-item icon-img-sm"
+            />
+            <div class="page-info page-info--offset">10 / page</div>
+          </div>
+        </main>
+      </div>
+
+      <button class="fab">
+        <img src="../assets/chatbot.svg" alt="Chatbot" class="fab-img" />
+      </button>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+      (function () {
+        const MONTHS = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+        const MONTH_FULL = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        const DAY_NAMES = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+
+        // ── Calendar State ──────────────────────────────────────────────────
+        const calState = {
+          start: {
+            year: 2026,
+            month: 0,
+            day: 1,
+            applied: { year: 2026, month: 0, day: 1 },
+          },
+          end: {
+            year: 2026,
+            month: 0,
+            day: 12,
+            applied: { year: 2026, month: 0, day: 12 },
+          },
+        };
+
+        function pad2(n) {
+          return String(n).padStart(2, "0");
+        }
+
+        function fmtDate(y, m, d) {
+          return pad2(d) + "-" + pad2(m + 1) + "-" + y;
+        }
+
+        function fmtCalHeader(y, m, d) {
+          return pad2(d) + " - " + pad2(m + 1) + " - " + y;
+        }
+
+        function buildCalendar(id) {
+          const s = calState[id];
+          const monthSel = document.getElementById("cal-" + id + "-month");
+          const yearSel = document.getElementById("cal-" + id + "-year");
+          const grid = document.getElementById("cal-" + id + "-grid");
+          const header = document.getElementById("cal-" + id + "-header");
+
+          // Populate month select
+          monthSel.innerHTML = MONTHS.map(
+            (m, i) =>
+              `<option value="${i}" ${i === s.month ? "selected" : ""}>${m}</option>`,
+          ).join("");
+
+          // Populate year select (range ±5)
+          const currentYear = new Date().getFullYear();
+          let yearHTML = "";
+          for (let y = currentYear - 5; y <= currentYear + 5; y++) {
+            yearHTML += `<option value="${y}" ${y === s.year ? "selected" : ""}>${y}</option>`;
+          }
+          yearSel.innerHTML = yearHTML;
+
+          // Build grid
+          const firstDay = new Date(s.year, s.month, 1).getDay();
+          const daysInMonth = new Date(s.year, s.month + 1, 0).getDate();
+          const daysInPrev = new Date(s.year, s.month, 0).getDate();
+
+          let html = DAY_NAMES.map(
+            (d) => `<div class="cal-day-name">${d}</div>`,
+          ).join("");
+
+          // Leading days from prev month
+          for (let i = firstDay - 1; i >= 0; i--) {
+            html += `<div class="cal-day cal-day--other">${daysInPrev - i}</div>`;
+          }
+          // Days of current month
+          for (let d = 1; d <= daysInMonth; d++) {
+            const sel = d === s.day ? "cal-day--selected" : "";
+            html += `<div class="cal-day ${sel}" data-cal="${id}" data-day="${d}">${d}</div>`;
+          }
+          // Trailing days
+          const total = firstDay + daysInMonth;
+          const trailing = total % 7 === 0 ? 0 : 7 - (total % 7);
+          for (let d = 1; d <= trailing; d++) {
+            html += `<div class="cal-day cal-day--other">${d}</div>`;
+          }
+          grid.innerHTML = html;
+
+          // Update header to show pending selection
+          header.textContent = fmtCalHeader(s.year, s.month, s.day);
+        }
+
+        function openCal(id) {
+          closeAll();
+          buildCalendar(id);
+          document.getElementById("cal-" + id).classList.add("open");
+        }
+
+        function closeCal(id) {
+          document.getElementById("cal-" + id).classList.remove("open");
+        }
+
+        function applyDate(id) {
+          const s = calState[id];
+          s.applied = { year: s.year, month: s.month, day: s.day };
+          document.getElementById(id + "-date-display").textContent = fmtDate(
+            s.year,
+            s.month,
+            s.day,
+          );
+          closeCal(id);
+        }
+
+        function resetDate(id) {
+          const s = calState[id];
+          s.day = 1;
+          buildCalendar(id);
+        }
+
+        // Calendar event delegation
+        document.addEventListener("click", function (e) {
+          // Day click
+          const dayEl = e.target.closest("[data-day]");
+          if (dayEl && dayEl.dataset.cal) {
+            const id = dayEl.dataset.cal;
+            calState[id].day = parseInt(dayEl.dataset.day);
+            buildCalendar(id);
+            return;
+          }
+          // Nav arrows
+          const navBtn = e.target.closest("[data-dir][data-cal]");
+          if (navBtn) {
+            const id = navBtn.dataset.cal;
+            const dir = parseInt(navBtn.dataset.dir);
+            let { month, year } = calState[id];
+            month += dir;
+            if (month < 0) {
+              month = 11;
+              year--;
+            }
+            if (month > 11) {
+              month = 0;
+              year++;
+            }
+            calState[id].month = month;
+            calState[id].year = year;
+            buildCalendar(id);
+            return;
+          }
+          // Footer buttons
+          const applyBtn = e.target.closest(".btn-apply[data-cal]");
+          if (applyBtn) {
+            applyDate(applyBtn.dataset.cal);
+            return;
+          }
+          const cancelBtn = e.target.closest(".btn-cancel[data-cal]");
+          if (cancelBtn) {
+            closeCal(cancelBtn.dataset.cal);
+            return;
+          }
+          const resetBtn = e.target.closest(".btn-reset[data-cal]");
+          if (resetBtn) {
+            resetDate(resetBtn.dataset.cal);
+            return;
+          }
+        });
+
+        // Month/Year select change
+        ["start", "end"].forEach((id) => {
+          document
+            .getElementById("cal-" + id + "-month")
+            .addEventListener("change", function () {
+              calState[id].month = parseInt(this.value);
+              buildCalendar(id);
+            });
+          document
+            .getElementById("cal-" + id + "-year")
+            .addEventListener("change", function () {
+              calState[id].year = parseInt(this.value);
+              buildCalendar(id);
+            });
+        });
+
+        // Date card triggers
+        document
+          .getElementById("start-date-trigger")
+          .addEventListener("click", function (e) {
+            e.stopPropagation();
+            document.getElementById("cal-start").classList.contains("open")
+              ? closeCal("start")
+              : openCal("start");
+          });
+        document
+          .getElementById("end-date-trigger")
+          .addEventListener("click", function (e) {
+            e.stopPropagation();
+            document.getElementById("cal-end").classList.contains("open")
+              ? closeCal("end")
+              : openCal("end");
+          });
+
+        // ── Time Picker State ───────────────────────────────────────────────
+        const tpState = {
+          start: { h: 14, m: 29, pendingH: 14, pendingM: 29 },
+          end: { h: 14, m: 39, pendingH: 14, pendingM: 39 },
+        };
+
+        function updateTpDisplay(id) {
+          const s = tpState[id];
+          const hStr = pad2(s.pendingH);
+          const mStr = pad2(s.pendingM);
+          document.getElementById("tp-" + id + "-h").textContent = hStr;
+          document.getElementById("tp-" + id + "-m").textContent = mStr;
+          document.getElementById("tp-" + id + "-display").textContent =
+            hStr + ":" + mStr;
+        }
+
+        function openTp(id) {
+          closeAll();
+          const s = tpState[id];
+          s.pendingH = s.h;
+          s.pendingM = s.m;
+          updateTpDisplay(id);
+          document.getElementById("tp-" + id).classList.add("open");
+        }
+
+        function closeTp(id) {
+          document.getElementById("tp-" + id).classList.remove("open");
+        }
+
+        // Time spinner button clicks
+        document.addEventListener("click", function (e) {
+          const btn = e.target.closest("[data-tp][data-unit][data-dir]");
+          if (!btn) return;
+          const id = btn.dataset.tp;
+          const unit = btn.dataset.unit;
+          const dir = parseInt(btn.dataset.dir);
+          const s = tpState[id];
+          if (unit === "h") {
+            s.pendingH = (s.pendingH + dir + 24) % 24;
+          } else {
+            s.pendingM = (s.pendingM + dir + 60) % 60;
+          }
+          updateTpDisplay(id);
+        });
+
+        // Time footer buttons
+        document.addEventListener("click", function (e) {
+          const applyBtn = e.target.closest(".btn-apply[data-tp]");
+          if (applyBtn) {
+            const id = applyBtn.dataset.tp;
+            const s = tpState[id];
+            s.h = s.pendingH;
+            s.m = s.pendingM;
+            document.getElementById(id + "-time-display").textContent =
+              pad2(s.h) + ":" + pad2(s.m);
+            closeTp(id);
+            return;
+          }
+          const cancelBtn = e.target.closest(".btn-cancel[data-tp]");
+          if (cancelBtn) {
+            closeTp(cancelBtn.dataset.tp);
+          }
+        });
+
+        // Time card triggers
+        document
+          .getElementById("start-time-trigger")
+          .addEventListener("click", function (e) {
+            e.stopPropagation();
+            document.getElementById("tp-start").classList.contains("open")
+              ? closeTp("start")
+              : openTp("start");
+          });
+        document
+          .getElementById("end-time-trigger")
+          .addEventListener("click", function (e) {
+            e.stopPropagation();
+            document.getElementById("tp-end").classList.contains("open")
+              ? closeTp("end")
+              : openTp("end");
+          });
+
+        // ── Search Autocomplete ─────────────────────────────────────────────
+        const searchInput = document.getElementById("search-input");
+        const autocomplete = document.getElementById("search-autocomplete");
+        const suggestions = autocomplete.querySelectorAll(
+          ".search-autocomplete-item",
+        );
+
+        searchInput.addEventListener("input", function () {
+          const val = this.value.toLowerCase();
+          let anyVisible = false;
+          suggestions.forEach((item) => {
+            const match = item.textContent
+              .toLowerCase()
+              .includes(val.split(":").pop().trim());
+            item.style.display = match ? "" : "none";
+            if (match) anyVisible = true;
+          });
+          if (val.length > 0 && anyVisible) {
+            autocomplete.classList.add("open");
+          } else {
+            autocomplete.classList.remove("open");
+          }
+        });
+
+        searchInput.addEventListener("focus", function () {
+          if (this.value.length > 0) {
+            suggestions.forEach((item) => {
+              item.style.display = "";
+            });
+            autocomplete.classList.add("open");
+          }
+        });
+
+        autocomplete
+          .querySelectorAll(".search-autocomplete-item")
+          .forEach((item) => {
+            item.addEventListener("click", function () {
+              searchInput.value = this.dataset.value;
+              autocomplete.classList.remove("open");
+            });
+          });
+
+        document
+          .getElementById("search-cancel")
+          .addEventListener("click", function () {
+            searchInput.value = "";
+            autocomplete.classList.remove("open");
+          });
+
+        // ── Close all on outside click ──────────────────────────────────────
+        function closeAll() {
+          ["start", "end"].forEach((id) => {
+            document.getElementById("cal-" + id).classList.remove("open");
+            document.getElementById("tp-" + id).classList.remove("open");
+          });
+          autocomplete.classList.remove("open");
+        }
+
+        document.addEventListener("click", function (e) {
+          if (
+            !e.target.closest(".picker-anchor") &&
+            !e.target.closest(".search-card")
+          ) {
+            closeAll();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

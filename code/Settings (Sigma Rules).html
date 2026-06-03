@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPARC - Sigma Rules</title>
+    <link rel="stylesheet" href="globals.css" />
+  </head>
+  <body class="light">
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <div class="sidebar-logo-icon">
+            <img src="../assets/logo.png" alt="Logo" class="logo-img" />
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="Dashboard.html" class="nav-item">
+              <img
+                src="../assets/icons/dashboard_icon.svg"
+                alt="Analytics"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Investigation.html" class="nav-item">
+              <img
+                src="../assets/icons/investigate_page.svg"
+                alt="Investigate"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Incidents List.html" class="nav-item">
+              <img
+                src="../assets/icons/incident_page.svg"
+                alt="Incidents"
+                class="nav-icon"
+              />
+            </a>
+          </div>
+          <div class="nav-group">
+            <a href="Settings (Data Sources).html" class="nav-item active">
+              <img
+                src="../assets/icons/settings.svg"
+                alt="Settings"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Settings (Data Sources).html" class="nav-item">
+              <img
+                src="../assets/icons/settings_data_sources.svg"
+                alt="Option 2"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Settings (Sigma Rules).html" class="nav-item">
+              <img
+                src="../assets/icons/settings_sigma.svg"
+                alt="Option 3"
+                class="nav-icon"
+              />
+            </a>
+            <a href="#" class="nav-item">
+              <img
+                src="../assets/icons/settings.svg"
+                alt="Option 4"
+                class="nav-icon"
+              />
+            </a>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content-wrapper">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="topbar-title">
+            <span>Settings</span>
+            <img
+              src="../assets/icons/next_page.svg"
+              alt="Next"
+              class="icon-img-sm"
+            />
+            <span class="active-path">Rules</span>
+          </div>
+
+          <div class="topbar-actions">
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/light_mode.svg"
+                alt="Light Mode"
+                class="nav-icon"
+              />
+            </button>
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/account.svg"
+                alt="Account"
+                class="nav-icon"
+              />
+            </button>
+          </div>
+        </header>
+
+        <!-- Canvas -->
+        <main class="main-canvas">
+          <div class="settings-row">
+            <div class="segmented-control-large flex-1">
+              <div
+                class="segment-btn"
+                onclick="
+                  window.location.href = 'Settings (Correlation Rules).html'
+                "
+              >
+                Correlation Rules
+              </div>
+              <div class="segment-btn active">Sigma Rules</div>
+            </div>
+
+            <div class="search-pill-container">
+              <img src="../assets/icons/search.svg" alt="Search Icon" />
+              <input type="text" placeholder="Search" />
+            </div>
+          </div>
+
+          <div class="card-main card-main--flush-x">
+            <div class="card-section-header">
+              <div class="segmented-control-small">
+                <div class="segment-sm">Default</div>
+                <div class="segment-sm active">Custom</div>
+              </div>
+              <div class="status-pill-info">TOTAL RULES : 40</div>
+
+              <div class="card-actions">
+                <button
+                  class="action-btn-outline"
+                  onclick="
+                    document
+                      .getElementById('edit-modal')
+                      .classList.add('active')
+                  "
+                >
+                  Upload JSON
+                </button>
+                <button class="action-btn-outline">Create Rule</button>
+              </div>
+            </div>
+
+            <!-- Table -->
+            <div class="card-main">
+              <table class="data-table data-table--flush">
+                <thead>
+                  <tr>
+                    <th>RULES</th>
+                    <th>LOG SOURCES</th>
+                    <th>SEVERITY</th>
+                    <th class="col-right">ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>BB: IDEA AD User Account Deleted</td>
+                    <td class="td-muted">
+                      Product: window | service : security
+                    </td>
+                    <td>
+                      <span class="status-severity medium">Medium</span>
+                    </td>
+                    <td class="col-right">
+                      <span class="status-tag status-tag--mr"
+                        >attack.execution</span
+                      >
+                      <img
+                        src="../assets/icons/edit.svg"
+                        alt="edit_square"
+                        class="icon-action"
+                        onclick="
+                          document
+                            .getElementById('edit-modal')
+                            .classList.add('active')
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>BB: IDEA AD User Account Deleted</td>
+                    <td class="td-muted">
+                      Product: window | service : security
+                    </td>
+                    <td><span class="status-severity low">Low</span></td>
+                    <td class="col-right">
+                      <span class="status-tag status-tag--mr"
+                        >attack.initial_acce</span
+                      >
+                      <img
+                        src="../assets/icons/edit.svg"
+                        alt="edit_square"
+                        class="icon-action"
+                        onclick="
+                          document
+                            .getElementById('edit-modal')
+                            .classList.add('active')
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TDMDS Malware Events as Offenses (Local)</td>
+                    <td class="td-muted">Product: Linux</td>
+                    <td><span class="status-severity high">High</span></td>
+                    <td class="col-right">
+                      <span class="status-tag status-tag--mr"
+                        >attack.initial_acce</span
+                      >
+                      <img
+                        src="../assets/icons/edit.svg"
+                        alt="edit_square"
+                        class="icon-action"
+                        onclick="
+                          document
+                            .getElementById('edit-modal')
+                            .classList.add('active')
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>WAF CVE Exploit Attempt - Imperva and F5 Alerts</td>
+                    <td class="td-muted">Product: Linux</td>
+                    <td><span class="status-severity high">High</span></td>
+                    <td class="col-right">
+                      <span class="status-tag status-tag--mr"
+                        >attack.initial_acce</span
+                      >
+                      <img
+                        src="../assets/icons/edit.svg"
+                        alt="edit_square"
+                        class="icon-action"
+                        onclick="
+                          document
+                            .getElementById('edit-modal')
+                            .classList.add('active')
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      JNDI Pattern Detection in Proxy (Forcepoint , local)
+                    </td>
+                    <td class="td-muted">Product: Linux</td>
+                    <td><span class="status-severity high">High</span></td>
+                    <td class="col-right">
+                      <span class="status-tag status-tag--mr"
+                        >attack.initial_acce</span
+                      >
+                      <img
+                        src="../assets/icons/edit.svg"
+                        alt="edit_square"
+                        class="icon-action"
+                        onclick="
+                          document
+                            .getElementById('edit-modal')
+                            .classList.add('active')
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>BB: IDEA AD User Account Deleted</td>
+                    <td class="td-muted">Product: Linux</td>
+                    <td><span class="status-severity high">High</span></td>
+                    <td class="col-right">
+                      <span class="status-tag status-tag--mr"
+                        >attack.initial_acce</span
+                      >
+                      <img
+                        src="../assets/icons/edit.svg"
+                        alt="edit_square"
+                        class="icon-action"
+                        onclick="
+                          document
+                            .getElementById('edit-modal')
+                            .classList.add('active')
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>BB: IDEA AD User Account Deleted</td>
+                    <td class="td-muted">Product: Linux</td>
+                    <td><span class="status-severity high">High</span></td>
+                    <td class="col-right">
+                      <span class="status-tag status-tag--mr"
+                        >attack.initial_acce</span
+                      >
+                      <img
+                        src="../assets/icons/edit.svg"
+                        alt="edit_square"
+                        class="icon-action"
+                        onclick="
+                          document
+                            .getElementById('edit-modal')
+                            .classList.add('active')
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TDMDS Malware Events as Offenses (Local)</td>
+                    <td class="td-muted">Product: Linux</td>
+                    <td><span class="status-severity high">High</span></td>
+                    <td class="col-right">
+                      <span class="status-tag status-tag--mr"
+                        >attack.initial_acce</span
+                      >
+                      <img
+                        src="../assets/icons/edit.svg"
+                        alt="edit_square"
+                        class="icon-action"
+                        onclick="
+                          document
+                            .getElementById('edit-modal')
+                            .classList.add('active')
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>WAF CVE Exploit Attempt - Imperva and F5 Alerts</td>
+                    <td class="td-muted">Product: Linux</td>
+                    <td><span class="status-severity high">High</span></td>
+                    <td class="col-right">
+                      <span class="status-tag status-tag--mr"
+                        >attack.initial_acce</span
+                      >
+                      <img
+                        src="../assets/icons/edit.svg"
+                        alt="edit_square"
+                        class="icon-action"
+                        onclick="
+                          document
+                            .getElementById('edit-modal')
+                            .classList.add('active')
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>WAF CVE Exploit Attempt - Imperva and F5 Alerts</td>
+                    <td class="td-muted">Product: Linux | service : sshd</td>
+                    <td><span class="status-severity high">High</span></td>
+                    <td class="col-right">
+                      <span class="status-tag status-tag--mr"
+                        >attack.initial_acce</span
+                      >
+                      <img
+                        src="../assets/icons/edit.svg"
+                        alt="edit_square"
+                        class="icon-action"
+                        onclick="
+                          document
+                            .getElementById('edit-modal')
+                            .classList.add('active')
+                        "
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="pagination pagination--padded">
+            <img
+              src="../assets/icons/previous_page.svg"
+              alt="Next"
+              class="page-item icon-img-sm"
+            />
+            <span class="page-item active">1</span>
+            <span class="page-item">2</span>
+            <span class="page-item">3</span>
+            <span class="page-item">4</span>
+            <span class="page-item">5</span>
+            <img
+              src="../assets/icons/next_page.svg"
+              alt="Next"
+              class="page-item icon-img-sm"
+            />
+            <div class="page-info page-info--padded">10 / page</div>
+          </div>
+        </main>
+      </div>
+
+      <button class="fab">
+        <img src="../assets/chatbot.svg" alt="Chatbot" class="fab-img" />
+      </button>
+    </div>
+
+    <!-- Edit Rule Modal -->
+    <div class="modal-overlay" id="edit-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title">Edit Rule</div>
+          <div class="modal-header-actions">
+            <a>Upload YAML</a>
+            <a>Upload JSON</a>
+          </div>
+        </div>
+        <div class="modal-body">
+          <textarea class="code-editor">
+detection:
+  filter_dc:
+    ComputerName | contains: DC
+  condition: selected and filter_dc
+selection:
+  EventID: 4726
+level: medium
+author: iSIEM
+description: Detects AD user account deletion event on Domain Controllers
+title: 'BB: IDEA AS User Account Deleted'
+logsource:
+  product: window
+  service: security
+name: bb_idea_ad_user_detected</textarea
+          >
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn-cancel"
+            onclick="
+              document.getElementById('edit-modal').classList.remove('active')
+            "
+          >
+            Cancel
+          </button>
+          <button
+            class="action-btn-outline"
+            onclick="
+              document.getElementById('edit-modal').classList.remove('active')
+            "
+          >
+            Save Changes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPARC - Data Sources</title>
+    <link rel="stylesheet" href="globals.css" />
+  </head>
+  <body class="light">
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <div class="sidebar-logo-icon">
+            <img src="../assets/logo.png" alt="Logo" class="logo-img" />
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="Dashboard.html" class="nav-item">
+              <img
+                src="../assets/icons/dashboard_icon.svg"
+                alt="Analytics"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Investigation.html" class="nav-item">
+              <img
+                src="../assets/icons/investigate_page.svg"
+                alt="Investigate"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Incidents List.html" class="nav-item">
+              <img
+                src="../assets/icons/incident_page.svg"
+                alt="Incidents"
+                class="nav-icon"
+              />
+            </a>
+          </div>
+          <div class="nav-group">
+            <a href="Settings (Integrations).html" class="nav-item active">
+              <img
+                src="../assets/icons/settings_integration.svg"
+                alt="Settings"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Settings (Data Sources).html" class="nav-item">
+              <img
+                src="../assets/icons/settings_data_sources.svg"
+                alt="Option 2"
+                class="nav-icon"
+              />
+            </a>
+            <a href="Settings (Sigma Rules).html" class="nav-item">
+              <img
+                src="../assets/icons/settings_sigma.svg"
+                alt="Option 3"
+                class="nav-icon"
+              />
+            </a>
+            <a href="#" class="nav-item">
+              <img
+                src="../assets/icons/settings.svg"
+                alt="Option 4"
+                class="nav-icon"
+              />
+            </a>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content-wrapper">
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="topbar-title">
+            <span>Settings</span>
+            <img
+              src="../assets/icons/next_page.svg"
+              alt="Next"
+              class="icon-img-sm"
+            />
+            <span class="active-path">Data Sources</span>
+          </div>
+
+          <div class="topbar-actions">
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/light_mode.svg"
+                alt="Light Mode"
+                class="nav-icon"
+              />
+            </button>
+            <button class="icon-btn-dark">
+              <img
+                src="../assets/icons/account.svg"
+                alt="Account"
+                class="nav-icon"
+              />
+            </button>
+          </div>
+        </header>
+
+        <!-- Canvas -->
+        <main class="main-canvas">
+          <div class="settings-top-row">
+            <div class="settings-title-card">
+              <div class="settings-title-card-heading">Ingest Your Data</div>
+              <div class="settings-title-card-sub">
+                Add Data With Integrations
+              </div>
+            </div>
+
+            <div class="search-pill-container">
+              <img src="../assets/icons/search.svg" alt="Search Icon" />
+              <input type="text" placeholder="Search" />
+            </div>
+          </div>
+
+          <div class="segmented-control-large segmented-control-large--spaced">
+            <div class="segment-btn active segment-btn--compact">All</div>
+            <div class="segment-btn">Wireless</div>
+            <div class="segment-btn">Firewall</div>
+            <div class="segment-btn">Network</div>
+            <div class="segment-btn">Operating System</div>
+            <div class="segment-btn">Virtualization</div>
+          </div>
+
+          <div class="data-sources-grid">
+            <!-- Card 1 -->
+            <div class="integration-card">
+              <div class="integration-icon">CA</div>
+              <div class="integration-details">
+                <div class="integration-title">Cisco Aironet</div>
+                <div class="integration-desc">
+                  Collect wireless LAN logs and metric from Cisco Aironet access
+                  points
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="integration-card">
+              <div class="integration-icon">FF</div>
+              <div class="integration-details">
+                <div class="integration-title">
+                  Fortinet FortiGate Security Gateway
+                </div>
+                <div class="integration-desc">
+                  Collect firewall, VPN, and security event logs from Fortinet
+                  FortiGate devices.
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="integration-card">
+              <div class="integration-icon">CA</div>
+              <div class="integration-details">
+                <div class="integration-title">Cisco Aironet</div>
+                <div class="integration-desc">
+                  Collect wireless LAN logs and metric from Cisco Aironet access
+                  points
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="integration-card">
+              <div class="integration-icon">FF</div>
+              <div class="integration-details">
+                <div class="integration-title">
+                  Fortinet FortiGate Security Gateway
+                </div>
+                <div class="integration-desc">
+                  Collect firewall, VPN, and security event logs from Fortinet
+                  FortiGate devices.
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="integration-card">
+              <div class="integration-icon">CA</div>
+              <div class="integration-details">
+                <div class="integration-title">Cisco Aironet</div>
+                <div class="integration-desc">
+                  Collect wireless LAN logs and metric from Cisco Aironet access
+                  points
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="integration-card">
+              <div class="integration-icon">FF</div>
+              <div class="integration-details">
+                <div class="integration-title">
+                  Fortinet FortiGate Security Gateway
+                </div>
+                <div class="integration-desc">
+                  Collect firewall, VPN, and security event logs from Fortinet
+                  FortiGate devices.
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="integration-card">
+              <div class="integration-icon">CA</div>
+              <div class="integration-details">
+                <div class="integration-title">Cisco Aironet</div>
+                <div class="integration-desc">
+                  Collect wireless LAN logs and metric from Cisco Aironet access
+                  points
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <!-- Card 8 (active) -->
+            <div class="integration-card">
+              <div class="integration-icon">LO</div>
+              <div class="integration-details">
+                <div class="integration-title">Linux OS</div>
+                <div class="integration-desc">
+                  Collect and monitor system and security logs from Linux-based
+                  operating systems.
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <!-- Card 9 (active) -->
+            <div class="integration-card">
+              <div class="integration-icon">CA</div>
+              <div class="integration-details">
+                <div class="integration-title">Cisco Aironet</div>
+                <div class="integration-desc">
+                  Collect wireless LAN logs and metric from Cisco Aironet access
+                  points
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <button class="fab">
+        <img src="../assets/chatbot.svg" alt="Chatbot" class="fab-img" />
+      </button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
